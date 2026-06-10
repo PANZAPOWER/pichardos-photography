@@ -203,3 +203,59 @@
   });
   imgs.forEach(img => obs.observe(img));
 })();
+
+// Page intro loader
+(function() {
+  const loader = document.getElementById('page-loader');
+  if (!loader) return;
+  // Hide after 1.2s (bar animation completes)
+  setTimeout(() => {
+    loader.classList.add('hidden');
+    document.body.style.overflow = '';
+  }, 1200);
+  document.body.style.overflow = 'hidden';
+})();
+
+// Luxury cursor (desktop only)
+(function() {
+  if (window.matchMedia('(pointer: coarse)').matches) return;
+  const dot  = document.getElementById('cursor-dot');
+  const ring = document.getElementById('cursor-ring');
+  if (!dot || !ring) return;
+
+  let mx = -200, my = -200, rx = -200, ry = -200;
+
+  document.addEventListener('mousemove', e => {
+    mx = e.clientX; my = e.clientY;
+    dot.style.left = mx + 'px';
+    dot.style.top  = my + 'px';
+  });
+
+  // Ring follows with lerp for smoothness
+  (function lerp() {
+    rx += (mx - rx) * 0.15;
+    ry += (my - ry) * 0.15;
+    ring.style.left = rx + 'px';
+    ring.style.top  = ry + 'px';
+    requestAnimationFrame(lerp);
+  })();
+
+  // Expand ring on interactive elements
+  document.querySelectorAll('a, button, .service-card, .bento-item, .gallery-cat, .package-card').forEach(el => {
+    el.addEventListener('mouseenter', () => ring.classList.add('hover'));
+    el.addEventListener('mouseleave', () => ring.classList.remove('hover'));
+  });
+})();
+
+// Parallax hero background
+(function() {
+  const heroImg = document.querySelector('.hero-bg-img');
+  if (!heroImg) return;
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  window.addEventListener('scroll', () => {
+    const y = window.scrollY;
+    if (y < window.innerHeight) {
+      heroImg.style.transform = 'translateY(' + (y * 0.3) + 'px) scale(1.05)';
+    }
+  }, { passive: true });
+})();
