@@ -1,0 +1,91 @@
+[
+  {
+    "category": "Booking",
+    "questions": [
+      {
+        "q": "How far in advance should I book?",
+        "a": "For quinceañeras and large events, we recommend booking 6–12 months in advance — our calendar fills quickly, especially for spring and fall seasons. For portrait sessions and smaller events, 4–8 weeks notice is usually sufficient. The earlier the better to guarantee your preferred date."
+      },
+      {
+        "q": "How do I reserve my date?",
+        "a": "Contact us through our website, Instagram, or Facebook to check availability. A non-refundable retainer and signed contract secure your date. We accept most major payment methods including Zelle and cash."
+      },
+      {
+        "q": "Do you require a contract?",
+        "a": "Yes — every session is backed by a professional contract that protects both parties and clearly outlines deliverables, timeline, and usage rights. We believe in complete transparency."
+      }
+    ]
+  },
+  {
+    "category": "Pricing & Packages",
+    "questions": [
+      {
+        "q": "How much does photography cost?",
+        "a": "Pricing varies by the type of session, duration, and deliverables. We offer packages starting at affordable rates for portrait mini-sessions and scaling to full-day event coverage. Contact us for a custom quote — we work with families at every budget level."
+      },
+      {
+        "q": "What's included in a typical package?",
+        "a": "Most packages include pre-session consultation, full event or session coverage, professional editing of all selected images, and delivery through a private online gallery. Print packages and albums are available as add-ons."
+      },
+      {
+        "q": "Do you offer payment plans?",
+        "a": "Yes — we understand that milestone events are significant investments. Payment plans are available with a deposit at booking and the balance paid before the event."
+      }
+    ]
+  },
+  {
+    "category": "Sessions & What to Expect",
+    "questions": [
+      {
+        "q": "What should I wear to my photo session?",
+        "a": "We provide a wardrobe guide upon booking. Generally: solid colors photograph better than busy patterns, bring 2–3 outfit options, wear clothes that make you feel confident and comfortable. For quinceañeras and formals, your attire is already set — we focus on making it look spectacular."
+      },
+      {
+        "q": "How long does a session last?",
+        "a": "Portrait mini-sessions run 30–60 minutes. Standard portrait sessions are 1–2 hours. Event coverage (quinceañeras, graduations, sweet 16s) typically runs 4–8 hours depending on the package."
+      },
+      {
+        "q": "What if the weather doesn't cooperate?",
+        "a": "For outdoor sessions, we monitor weather closely and communicate proactively. We have backup indoor location options for most sessions, and we'll work with you to reschedule if necessary at no additional charge."
+      },
+      {
+        "q": "Can I bring a friend or family member to my session?",
+        "a": "Absolutely — we actually recommend it! A support person helps you feel relaxed and can assist with wardrobe changes. Just keep the group small so we can maintain focus."
+      }
+    ]
+  },
+  {
+    "category": "Delivery & Editing",
+    "questions": [
+      {
+        "q": "How long until I receive my photos?",
+        "a": "Portrait and mini-sessions are typically delivered within 2–3 weeks. Quinceañeras, graduations, and large events are delivered within 4–6 weeks. Rush editing is available for an additional fee."
+      },
+      {
+        "q": "How will my photos be delivered?",
+        "a": "All photos are delivered through a private, password-protected online gallery where you can download full-resolution images, create favorites, and order prints directly. You'll receive a link via email."
+      },
+      {
+        "q": "How many photos will I receive?",
+        "a": "It depends on your package. Portrait sessions typically yield 50–150 edited images. Quinceañeras and large events: 300–600+ edited images. We never just deliver quantity — every image in your gallery is professionally edited and worth keeping."
+      },
+      {
+        "q": "Do you provide RAW/unedited files?",
+        "a": "We don't deliver RAW files — our editing is part of what makes our work distinctive. Every image goes through our signature post-processing to achieve the cinematic quality you see in our portfolio."
+      }
+    ]
+  },
+  {
+    "category": "Travel & Coverage Area",
+    "questions": [
+      {
+        "q": "Do you travel outside of Dallas?",
+        "a": "Yes — we serve all of Texas. We regularly travel to Fort Worth, Houston, Austin, San Antonio, El Paso, McAllen, Waco, Tyler, Galveston, and beyond. Travel fees apply for destinations beyond 50 miles from Dallas."
+      },
+      {
+        "q": "Do you shoot destination events?",
+        "a": "We accept destination bookings across Texas and can discuss interstate travel for truly special events. Contact us with your details and we'll create a custom quote."
+      }
+    ]
+  }
+]

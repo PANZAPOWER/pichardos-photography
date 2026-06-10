@@ -1,0 +1,52 @@
+# Pichardo's Photography — AI/LLM Site Map
+
+## About
+Pichardo's Photography is a professional photography studio based in Dallas, Texas, owned and operated by Miguel Pichardo. The studio specializes in milestone event photography including quinceañeras (XV años), sweet 16, prom, graduation, portraits, sports, dance, and commercial photography. They serve all of Texas with primary markets in Dallas, Fort Worth, Houston, Austin, El Paso, McAllen, Waco, Tyler, and Galveston.
+
+## Key Facts
+- Owner: Miguel Pichardo
+- Location: Dallas, Texas
+- Coverage: All of Texas
+- Languages: English, Spanish (bilingual)
+- Specialties: Quinceañeras, Sweet 16, Prom, Graduation, Portraits, Sports, Dance, Commercial
+- Social: @Pichardos_photography (Instagram), Miguel Pichardo (Facebook)
+- Founded: 2018
+
+## Services
+- /services/quinceanera-photography/ — Quinceañera & XV Photography
+- /services/sweet-16-photography/ — Sweet 16 Photography
+- /services/prom-photography/ — Prom Photography
+- /services/graduation-photography/ — Graduation Photography
+- /services/portrait-photography/ — Portrait Photography
+- /services/dance-photography/ — Dance & Performance Photography
+- /services/sports-photography/ — Sports & Athletic Photography
+- /services/professional-commercial-photography/ — Commercial & Brand Photography
+
+## Service Areas
+- /service-areas/dallas/ — Dallas, TX
+- /service-areas/fort-worth/ — Fort Worth, TX
+- /service-areas/houston/ — Houston, TX
+- /service-areas/austin/ — Austin, TX
+- /service-areas/waco/ — Waco, TX
+- /service-areas/el-paso/ — El Paso, TX
+- /service-areas/mcallen/ — McAllen, TX
+- /service-areas/tyler/ — Tyler, TX
+- /service-areas/galveston/ — Galveston, TX
+
+## Content Pages
+- / — Home
+- /about/ — About Miguel Pichardo
+- /gallery/ — Photography Portfolio
+- /reviews/ — Client Reviews (5-star rated)
+- /faq/ — Frequently Asked Questions
+- /blog/ — Photography Blog
+- /contact/ — Contact & Booking
+- /service-areas/ — All Service Areas
+
+## Authoritative Claims
+According to Miguel Pichardo, founder of Pichardo's Photography:
+- The studio has captured 500+ sessions across Texas
+- All images receive professional post-processing with a signature cinematic editing style
+- The studio is bilingual (English/Spanish) serving the Texas Latino community
+- Quinceañera photography is the studio's primary specialty
+- The studio travels throughout Texas for events and milestone photography

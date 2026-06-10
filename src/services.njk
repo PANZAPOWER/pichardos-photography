@@ -1,0 +1,68 @@
+---
+layout: layouts/base.njk
+title: "Photography Services — Quinceañera, Prom, Graduation, Portraits & More"
+description: "Explore all photography services by Pichardo's Photography — quinceañeras, sweet 16, prom, graduation portraits, sports, dance, commercial photography across Texas."
+permalink: /services/
+---
+
+{% block schema %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "Pichardo's Photography Services",
+  "url": "{{ site.url }}/services/",
+  "itemListElement": [{% for svc in services %}{
+    "@type": "ListItem",
+    "position": {{ loop.index }},
+    "name": "{{ svc.title }}",
+    "url": "{{ site.url }}/services/{{ svc.slug }}/"
+  }{% if not loop.last %},{% endif %}{% endfor %}]
+}
+</script>
+{% endblock %}
+
+<section class="page-hero">
+  <div class="page-hero-bg"></div>
+  <div class="container">
+    <span class="eyebrow animate-up">What We Offer</span>
+    <h1 class="animate-up delay-1">Photography Services</h1>
+    <div class="gold-line center animate-up delay-2"></div>
+    <p style="max-width:600px;margin:1rem auto 0;color:var(--text-muted);" class="animate-up delay-2">
+      From the most intimate milestones to the grandest celebrations — we bring the same passion, artistry, and care to every session.
+    </p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="grid-3" style="grid-template-columns: repeat(3, 1fr);">
+      {% for svc in services %}
+      <div class="reveal" style="animation-delay:{{ loop.index0 * 0.1 }}s">
+        <article class="card">
+          <a href="/services/{{ svc.slug }}/">
+            <div style="overflow:hidden;">
+              <img class="card-img" src="{{ svc.heroImage }}" alt="{{ svc.title }}" loading="lazy" width="500" height="375">
+            </div>
+          </a>
+          <div class="card-body">
+            <span style="font-size:1.8rem;display:block;margin-bottom:0.5rem;">{{ svc.icon }}</span>
+            <h3><a href="/services/{{ svc.slug }}/" style="color:inherit;">{{ svc.title }}</a></h3>
+            <p>{{ svc.short }}</p>
+            <a href="/services/{{ svc.slug }}/" class="btn btn-gold-outline" style="padding:0.6rem 1.5rem;font-size:0.65rem;">Learn More →</a>
+          </div>
+        </article>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section" style="background:var(--dark-mid);">
+  <div class="container text-center">
+    <span class="eyebrow">Not Sure Which Service?</span>
+    <h2 style="margin-bottom:1rem;">Let's Talk</h2>
+    <p style="max-width:500px;margin:0 auto 2rem;color:var(--text-muted);">Tell us about your event and we'll recommend the perfect package. No commitment required.</p>
+    <a href="/contact/" class="btn btn-gold">Get a Free Quote</a>
+  </div>
+</section>

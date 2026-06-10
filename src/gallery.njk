@@ -1,0 +1,97 @@
+---
+layout: layouts/base.njk
+title: "Gallery — Photography Portfolio"
+description: "Browse Pichardo's Photography portfolio — quinceañeras, sweet 16, prom, graduation, portraits, sports, dance and more across Texas."
+ogImage: /assets/img/gallery/xv/xv-1.jpeg
+permalink: /gallery/
+---
+
+{% block schema %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ImageGallery",
+  "name": "Pichardo's Photography Gallery",
+  "url": "{{ site.url }}/gallery/",
+  "description": "Photography portfolio by Miguel Pichardo — quinceañeras, prom, graduation, portraits, sports, dance, and events across Texas.",
+  "author": { "@type": "Person", "name": "{{ site.owner }}" }
+}
+</script>
+{% endblock %}
+
+<section class="page-hero">
+  <div class="page-hero-bg"></div>
+  <div class="container">
+    <span class="eyebrow animate-up">The Portfolio</span>
+    <h1 class="animate-up delay-1">Our Gallery</h1>
+    <div class="gold-line center animate-up delay-2"></div>
+    <p style="max-width:600px;margin:1rem auto 0;color:var(--text-muted);" class="animate-up delay-2">
+      Every image here is a real moment from a real session — artistically edited and proudly presented.
+    </p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+
+    <!-- Category Nav -->
+    <div style="display:flex;gap:0.75rem;flex-wrap:wrap;justify-content:center;margin-bottom:3rem;" class="reveal">
+      <button class="quick-reply active" onclick="filterGallery('all')" style="border-color:var(--gold);background:var(--gold);color:var(--black);">All</button>
+      <button class="quick-reply" onclick="filterGallery('xv')">Quinceañera</button>
+      <button class="quick-reply" onclick="filterGallery('sweet16')">Sweet 16</button>
+      <button class="quick-reply" onclick="filterGallery('prom')">Prom</button>
+      <button class="quick-reply" onclick="filterGallery('graduation')">Graduation</button>
+      <button class="quick-reply" onclick="filterGallery('portraits')">Portraits</button>
+      <button class="quick-reply" onclick="filterGallery('dance')">Dance</button>
+      <button class="quick-reply" onclick="filterGallery('sports')">Sports</button>
+      <button class="quick-reply" onclick="filterGallery('boxing')">Boxing</button>
+      <button class="quick-reply" onclick="filterGallery('beautician')">Commercial</button>
+      <button class="quick-reply" onclick="filterGallery('sessions')">Sessions</button>
+    </div>
+
+    <!-- Masonry Grid -->
+    <div class="gallery-masonry" id="gallery-grid">
+      {% for cat, imgs in galleryImages %}
+        {% for img in imgs %}
+        <div class="gal-item" data-cat="{{ cat }}">
+          <img
+            src="{{ img }}"
+            alt="Photography by Pichardo's Photography — {{ cat }} session"
+            loading="lazy"
+            width="400"
+            height="300"
+            data-lightbox="{{ img }}"
+          >
+          <div class="gal-overlay"><span>⊕</span></div>
+        </div>
+        {% endfor %}
+      {% endfor %}
+    </div>
+
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="banner">
+  <img class="banner-bg" src="/assets/img/gallery/prom/prom-1.jpeg" alt="" loading="lazy" aria-hidden="true">
+  <div class="banner-content container">
+    <span class="eyebrow">Love What You See?</span>
+    <h2>Book Your Session</h2>
+    <p style="color:var(--text-muted);max-width:500px;margin:1rem auto 2rem;">These are your people's milestones waiting to happen. Reserve your date before it's gone.</p>
+    <a href="/contact/" class="btn btn-gold">Contact Us Today</a>
+  </div>
+</section>
+
+<script>
+function filterGallery(cat) {
+  document.querySelectorAll('#gallery-grid .gal-item').forEach(el => {
+    el.style.display = (cat === 'all' || el.dataset.cat === cat) ? 'block' : 'none';
+  });
+  document.querySelectorAll('.quick-reply').forEach(btn => {
+    btn.style.background = 'transparent';
+    btn.style.color = 'var(--gold)';
+  });
+  event.target.style.background = 'var(--gold)';
+  event.target.style.color = 'var(--black)';
+}
+</script>

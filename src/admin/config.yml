@@ -1,0 +1,71 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "src/assets/img/gallery/uploads"
+public_folder: "/assets/img/gallery/uploads"
+
+site_url: https://pichardosphotography.com
+display_url: https://pichardosphotography.com
+logo_url: /assets/img/logo/logo-main.png
+
+collections:
+  - name: "blog"
+    label: "Blog Posts"
+    folder: "src/blog/posts"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Date", name: "date", widget: "datetime" }
+      - { label: "Category", name: "category", widget: "select", options: ["Planning Guide", "Tips & Tricks", "Session Spotlight", "Behind the Scenes", "Client Story", "Sports", "The Art", "Business"] }
+      - { label: "Featured Image", name: "image", widget: "image", required: false }
+      - { label: "Description", name: "description", widget: "text" }
+      - { label: "Body", name: "body", widget: "markdown" }
+      - { label: "Tags", name: "tags", widget: "list", default: ["blog"] }
+
+  - name: "gallery"
+    label: "Gallery Categories"
+    folder: "src/gallery/categories"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Category Name", name: "title", widget: "string" }
+      - { label: "Slug", name: "slug", widget: "string" }
+      - { label: "Description", name: "description", widget: "text" }
+      - { label: "Cover Image", name: "coverImage", widget: "image" }
+      - { label: "Photos", name: "photos", widget: "list", field: { label: "Photo", name: "photo", widget: "image" } }
+
+  - name: "reviews"
+    label: "Client Reviews"
+    files:
+      - label: "All Reviews"
+        name: "reviews"
+        file: "src/_data/reviews.json"
+        fields:
+          - label: "Reviews"
+            name: "reviews"
+            widget: "list"
+            fields:
+              - { label: "Name", name: "name", widget: "string" }
+              - { label: "City", name: "city", widget: "string" }
+              - { label: "Event Type", name: "event", widget: "string" }
+              - { label: "Rating", name: "rating", widget: "number", default: 5, min: 1, max: 5 }
+              - { label: "Review Text", name: "text", widget: "text" }
+              - { label: "Date", name: "date", widget: "datetime" }
+
+  - name: "site_settings"
+    label: "Site Settings"
+    files:
+      - label: "General Settings"
+        name: "site"
+        file: "src/_data/site.json"
+        fields:
+          - { label: "Business Name", name: "name", widget: "string" }
+          - { label: "Owner Name", name: "owner", widget: "string" }
+          - { label: "Tagline", name: "tagline", widget: "string" }
+          - { label: "Email", name: "email", widget: "string" }
+          - { label: "Phone", name: "phone", widget: "string" }
+          - { label: "Phone Display", name: "phoneDisplay", widget: "string" }
+          - { label: "Instagram URL", name: "instagram", widget: "string" }
+          - { label: "Facebook URL", name: "facebook", widget: "string" }

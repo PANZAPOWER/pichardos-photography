@@ -1,0 +1,171 @@
+[
+  {
+    "slug": "quinceanera-photography",
+    "title": "Quinceañera & XV Photography",
+    "short": "Stunning quinceañera photography that honors tradition and celebrates the milestone of a lifetime.",
+    "icon": "🌹",
+    "heroImage": "/assets/img/gallery/xv/xv-1.jpeg",
+    "quote": "\"For I know the plans I have for you, declares the Lord.\" — Jeremiah 29:11",
+    "intro": "Your quinceañera is one of the most sacred celebrations of your life — a beautiful transition from childhood to womanhood, steeped in tradition, family, and faith. Miguel Pichardo captures every glance, every tear, every twirl with the artistry and reverence this milestone deserves. From the cambio de zapatos to the last waltz, every moment is preserved forever.",
+    "covers": ["Court of Honor", "Crown ceremony", "Last doll", "Waltz & choreography", "Family portraits", "Detail shots (dress, tiara, bouquet)", "Church ceremony", "Reception & party"],
+    "process": [
+      { "step": "Consultation", "detail": "We meet to understand your vision, colors, theme, and venue so every shot is intentional." },
+      { "step": "Day-of Coverage", "detail": "Full event coverage from getting ready through the last dance, with a second shooter available." },
+      { "step": "Delivered Gallery", "detail": "Professionally edited high-resolution images delivered through a private online gallery within 4–6 weeks." }
+    ],
+    "faqs": [
+      { "q": "How far in advance should I book?", "a": "Quinceañeras are our most requested session — we recommend booking 6–12 months in advance to secure your date, especially for spring and fall." },
+      { "q": "Do you travel to other cities in Texas?", "a": "Absolutely. We serve all of Texas including Houston, San Antonio, Austin, El Paso, McAllen, and beyond. Travel fees may apply." },
+      { "q": "Do you offer videography as well?", "a": "We partner with trusted videographers and can coordinate a complete photo + video package for your event." }
+    ],
+    "areas": ["Dallas", "Fort Worth", "Houston", "San Antonio", "Austin", "El Paso", "McAllen"],
+    "featured": true
+  },
+  {
+    "slug": "sweet-16-photography",
+    "title": "Sweet 16 Photography",
+    "short": "Glamorous sweet 16 portraits that capture confidence, beauty, and the magic of turning 16.",
+    "icon": "🎂",
+    "heroImage": "/assets/img/gallery/sweet16/sweet16-1.jpeg",
+    "quote": "\"Sixteen is not just a birthday; it's the beginning of a journey filled with dreams, opportunities, and endless possibilities.\"",
+    "intro": "Sixteen is spectacular. It's the year you step into your power, your beauty, and your dreams. Miguel Pichardo's sweet 16 photography is designed to be as bold and luminous as the birthday girl herself — cinematic lighting, editorial composition, and genuine moments that will make you say \"that's so me.\"",
+    "covers": ["Party/event coverage", "Portrait sessions", "Group shots with friends", "Family formals", "Detail shots (cake, décor, crown)", "Candid moments on the dance floor"],
+    "process": [
+      { "step": "Style Consultation", "detail": "We discuss your vibe — glamorous, boho, sporty, elegant — and plan the session around your personality." },
+      { "step": "Event Coverage", "detail": "From the grand entrance to the last song, we capture every celebration moment." },
+      { "step": "Gallery Delivery", "detail": "Edited gallery of 200–400+ images delivered to your private online portal." }
+    ],
+    "faqs": [
+      { "q": "Can I do a separate portrait session before the party?", "a": "Yes! Many clients book a studio or outdoor portrait session a week before the party for magazine-worthy solo shots." },
+      { "q": "How many photos will I receive?", "a": "Depending on the package, typically 200–500+ fully edited images." }
+    ],
+    "areas": ["Dallas", "Fort Worth", "Arlington", "Irving", "Plano", "Frisco"],
+    "featured": true
+  },
+  {
+    "slug": "prom-photography",
+    "title": "Prom Photography",
+    "short": "Show-stopping prom portraits that capture the glow, the glam, and the unforgettable night.",
+    "icon": "✨",
+    "heroImage": "/assets/img/gallery/prom/prom-1.jpeg",
+    "quote": "\"Dance, laugh, and make memories that will last a lifetime.\"",
+    "intro": "Prom night is the stuff of legends — the outfit you spent months finding, the limo ride, the photos that will live in frames and phones forever. Pichardo's Photography transforms prom portraits into art. Whether it's a quick session before the limo arrives or a full styled shoot, we make you look like the cover of a magazine.",
+    "covers": ["Individual portraits", "Couples portraits", "Group shots", "Creative editorial looks", "Natural light & studio options", "Event coverage available"],
+    "process": [
+      { "step": "Mini Session or Full Session", "detail": "Choose a quick 30-min portrait session or a full styled editorial shoot based on your needs." },
+      { "step": "Shoot Day", "detail": "We come to you — your home, a park, an urban location — wherever matches your vibe." },
+      { "step": "Quick Turnaround", "detail": "For prom season, we offer expedited delivery so you have photos to share before the night ends." }
+    ],
+    "faqs": [
+      { "q": "Do you travel to the venue or school?", "a": "Yes — we can shoot at your home, a scenic location, or the venue itself. Let us know your vision." },
+      { "q": "Can multiple couples share a session?", "a": "Absolutely. Group session pricing is available for groups of 2–6 couples." }
+    ],
+    "areas": ["Dallas", "Fort Worth", "Plano", "Allen", "McKinney", "Denton"],
+    "featured": true
+  },
+  {
+    "slug": "graduation-photography",
+    "title": "Graduation Photography",
+    "short": "Honor the achievement with powerful graduation portraits that tell your story.",
+    "icon": "🎓",
+    "heroImage": "/assets/img/gallery/graduation/graduate-1.jpeg",
+    "quote": "\"Go confidently in the direction of your dreams.\" — Henry David Thoreau",
+    "intro": "Graduation isn't just a ceremony — it's the culmination of years of hard work, sacrifice, and growth. Whether you're crossing the stage at high school, earning your college degree, or completing a professional program, Pichardo's Photography creates graduation portraits that honor the magnitude of your achievement and capture who you've become.",
+    "covers": ["Cap & gown portraits", "Casual lifestyle shots", "Campus or location shoots", "Family portraits", "Ceremony coverage", "Senior portraits (combined sessions)"],
+    "process": [
+      { "step": "Location Scouting", "detail": "We find the perfect backdrop — campus, urban skyline, natural setting — that matches your story." },
+      { "step": "Portrait Session", "detail": "A relaxed, guided 1–2 hour session designed to bring out your authentic self." },
+      { "step": "Delivered Gallery", "detail": "50–150+ professionally edited images ready to share with family and frame forever." }
+    ],
+    "faqs": [
+      { "q": "Can you photograph the graduation ceremony?", "a": "Yes! We offer ceremony coverage in addition to portrait sessions for a complete graduation package." },
+      { "q": "What should I bring to my session?", "a": "Bring your cap and gown, 2–3 outfit changes, and any meaningful props (honor cords, diploma, sports gear, etc.)." }
+    ],
+    "areas": ["Dallas", "Fort Worth", "Waco", "Tyler", "Austin", "Houston"],
+    "featured": false
+  },
+  {
+    "slug": "portrait-photography",
+    "title": "Portrait Photography",
+    "short": "Timeless, striking portraits that reveal your character and capture who you truly are.",
+    "icon": "🎨",
+    "heroImage": "/assets/img/gallery/portraits/portraits-1.jpeg",
+    "quote": "\"A portrait is not made in the camera but on either side of it.\" — Edward Steichen",
+    "intro": "Every person has a story worth telling visually. Pichardo's portrait photography goes beyond a simple headshot — we create editorial-quality images that reveal personality, emotion, and presence. Whether for professional branding, family keepsakes, or personal expression, our portrait sessions are transformative experiences.",
+    "covers": ["Individual portraits", "Family portraits", "Professional headshots", "Branding portraits", "Lifestyle portraits", "Studio & outdoor options"],
+    "process": [
+      { "step": "Wardrobe Consultation", "detail": "We guide you on what to wear to make your portraits truly timeless and flattering." },
+      { "step": "Relaxed Session", "detail": "We direct you naturally so you never feel stiff or uncomfortable — just authentic." },
+      { "step": "Curated Gallery", "detail": "Receive a fully edited gallery of your best portraits within 2–3 weeks." }
+    ],
+    "faqs": [
+      { "q": "Do you offer studio sessions?", "a": "We have access to professional studio setups as well as beautiful outdoor and urban locations across the DFW area." },
+      { "q": "How long is a portrait session?", "a": "Standard sessions run 1–2 hours. Extended sessions are available for families or clients wanting multiple looks." }
+    ],
+    "areas": ["Dallas", "Fort Worth", "Frisco", "Plano", "Irving", "Arlington"],
+    "featured": false
+  },
+  {
+    "slug": "dance-photography",
+    "title": "Dance Recital & Performance Photography",
+    "short": "Expressive dance photography that freezes motion and captures the soul of the performance.",
+    "icon": "💃",
+    "heroImage": "/assets/img/gallery/dance/dance-1.jpeg",
+    "quote": "\"Dance is the hidden language of the soul.\" — Martha Graham",
+    "intro": "Dance is poetry in motion — and capturing it requires both technical precision and artistic intuition. Pichardo's Photography understands the art of dance and photographs it with the reverence it deserves. From studio recitals to competition stages, we freeze the flying leaps, the delicate extensions, and the raw emotion that defines a performer.",
+    "covers": ["Recital & performance coverage", "Studio portrait sessions", "Competition photography", "Artistic editorial dance shoots", "Individual & group shots", "Costume reveals"],
+    "process": [
+      { "step": "Pre-Event Prep", "detail": "We coordinate with dance schools and studios to understand lighting conditions and best angles." },
+      { "step": "Performance Coverage", "detail": "High-speed shooting captures sharp, freeze-frame moments even in dynamic movement." },
+      { "step": "Gallery Delivery", "detail": "Fully edited performance and portrait gallery delivered within 3–4 weeks." }
+    ],
+    "faqs": [
+      { "q": "Can you photograph multiple dancers or the full company?", "a": "Yes — we routinely photograph entire dance companies and can manage complex multi-dancer sessions efficiently." },
+      { "q": "Do you offer video of performances?", "a": "We partner with videographers for complete documentation of recitals and competitions." }
+    ],
+    "areas": ["Dallas", "Fort Worth", "Plano", "Allen", "McKinney", "Garland"],
+    "featured": false
+  },
+  {
+    "slug": "sports-photography",
+    "title": "Sports & Athletic Photography",
+    "short": "Dynamic sports photography that captures the passion, power, and heart of every athlete.",
+    "icon": "⚾",
+    "heroImage": "/assets/img/gallery/sports/littleleaguebaseball-1.jpeg",
+    "quote": "\"Success begins with a single swing.\"",
+    "intro": "Every athlete has a story of dedication, grit, and triumph. From little league ballparks to boxing gyms, Pichardo's Photography documents the full spectrum of athletic achievement. We specialize in action shots that freeze the decisive moment and portrait sessions that reveal the fire in your eyes before the game even starts.",
+    "covers": ["Game & event action coverage", "Team and individual portraits", "Little league baseball", "Soccer & football", "Boxing & martial arts", "Pre-season athletic portraits"],
+    "process": [
+      { "step": "Sport-Specific Planning", "detail": "We review schedules, lighting conditions, and key moments to plan our shooting strategy." },
+      { "step": "Game Day Coverage", "detail": "Fast telephoto shooting captures action sequences, celebrations, and sideline moments." },
+      { "step": "Gallery + Print Options", "detail": "Edited gallery of your athlete's best moments, perfect for families and team sponsors." }
+    ],
+    "faqs": [
+      { "q": "Do you photograph youth sports leagues?", "a": "Absolutely — little league, youth soccer, and youth basketball are among our specialties." },
+      { "q": "Can you photograph boxing or martial arts events?", "a": "Yes. We have extensive experience in combat sports photography and understand the timing required to capture peak action." }
+    ],
+    "areas": ["Dallas", "Fort Worth", "Irving", "Grand Prairie", "Mesquite", "Garland"],
+    "featured": false
+  },
+  {
+    "slug": "professional-commercial-photography",
+    "title": "Professional & Commercial Photography",
+    "short": "Business headshots, brand content, and commercial photography that makes your brand look elite.",
+    "icon": "💼",
+    "heroImage": "/assets/img/gallery/beautician/beautician-1.jpeg",
+    "quote": "\"Confidence is the best beauty secret.\"",
+    "intro": "Your brand is your reputation — and how you look online matters. From salon owners to fitness coaches to real estate professionals, Pichardo's Photography creates commercial imagery that positions your business as the premium choice in your market. Elevate your brand with photography that commands respect.",
+    "covers": ["Professional headshots", "Brand & lifestyle photography", "Product photography", "Salon & beauty industry", "Social media content creation", "Team photography"],
+    "process": [
+      { "step": "Brand Discovery", "detail": "We review your brand identity, target audience, and how you want to be perceived to plan the session." },
+      { "step": "Content Shoot", "detail": "Studio or on-location shoot producing a library of versatile images for web, social, and print." },
+      { "step": "Fast Delivery", "detail": "Priority editing with 7–10 day turnaround for commercial clients." }
+    ],
+    "faqs": [
+      { "q": "Do you photograph salons, spas, or beauty professionals?", "a": "Beauty and aesthetics is one of our specialty niches — we understand lighting and angles that make beauty work look stunning." },
+      { "q": "Can I use the photos for advertising?", "a": "Commercial use licensing is included in all professional packages." }
+    ],
+    "areas": ["Dallas", "Fort Worth", "Irving", "Plano", "Frisco", "Southlake"],
+    "featured": false
+  }
+]

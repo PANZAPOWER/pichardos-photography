@@ -1,0 +1,121 @@
+<!-- CHAT WIDGET -->
+<div id="chat-widget" aria-label="Photography FAQ chatbot">
+
+  <div class="chat-window" id="chat-window" role="dialog" aria-modal="false" aria-labelledby="chat-header-title">
+    <div class="chat-header">
+      <img src="/assets/img/logo/logo-main.png" alt="Pichardo's Photography" class="chat-header-avatar">
+      <div>
+        <span class="chat-header-name" id="chat-header-title">Pichardo's Photography</span>
+        <span class="chat-header-status">Online — Usually replies instantly</span>
+      </div>
+    </div>
+
+    <div class="chat-messages" id="chat-messages" aria-live="polite">
+      <div class="chat-msg bot">
+        <div class="chat-bubble-text">
+          Hi there! 👋 I'm here to answer your questions about Pichardo's Photography. What would you like to know?
+        </div>
+      </div>
+    </div>
+
+    <div class="chat-quick-replies" id="quick-replies" aria-label="Quick questions">
+      <button class="quick-reply" data-q="pricing">💰 Pricing?</button>
+      <button class="quick-reply" data-q="booking">📅 How to Book?</button>
+      <button class="quick-reply" data-q="quince">🌹 Quinceañera?</button>
+      <button class="quick-reply" data-q="delivery">📸 Photo Delivery?</button>
+      <button class="quick-reply" data-q="areas">📍 Service Areas?</button>
+    </div>
+
+    <div class="chat-input-row">
+      <input type="text" class="chat-input" id="chat-input" placeholder="Ask a question..." aria-label="Type your question">
+      <button class="chat-send" id="chat-send" aria-label="Send message">➤</button>
+    </div>
+  </div>
+
+  <button class="chat-bubble" id="chat-toggle" aria-label="Open chat" aria-expanded="false" aria-controls="chat-window">
+    <span id="chat-bubble-icon">💬</span>
+  </button>
+
+</div>
+
+<script>
+(function() {
+  const answers = {
+    pricing: "Our packages start at very affordable rates for portrait mini-sessions. Quinceañera and full event coverage packages vary based on hours, coverage, and add-ons. 📩 The best way to get exact pricing is to contact us — we customize every quote!",
+    booking: "To book your session: 1) Check availability via our contact form or DM us on Instagram @Pichardos_photography 2) We send you a quote + contract 3) A retainer secures your date. We recommend booking 6–12 months ahead for quinceañeras!",
+    quince: "Quinceañeras are our specialty! ❤️ We cover everything — getting ready, the church ceremony, the waltz, court of honor, reception, and all the emotional moments in between. Full gallery delivered within 4–6 weeks. Ask us about packages!",
+    delivery: "Photos are delivered through a private online gallery within 2–3 weeks (portraits) or 4–6 weeks (events). You'll get a link to download full-resolution images and can order prints directly through the gallery.",
+    areas: "We serve ALL of Texas! 🗺️ Based in Dallas, we regularly travel to Fort Worth, Houston, Austin, San Antonio, El Paso, McAllen, Waco, Tyler, Galveston, and beyond. Travel fees may apply for destinations beyond 50 miles.",
+    prom: "Prom sessions can be a quick 30-min portrait shoot before the limo, or a full styled editorial session. We come to you — your home, a park, or the venue. Fast turnaround for prom season so you have photos to share the same weekend!",
+    sweet16: "Sweet 16 sessions include party/event coverage, portrait sessions, group shots with friends, family formals, and all the fun detail shots. We make sure the birthday girl shines in every single frame!",
+    sports: "We love sports photography! ⚾ Little league, soccer, boxing, basketball — we specialize in action shots that freeze the decisive moment PLUS portrait sessions that capture the fire in your athlete's eyes.",
+    instagram: "Follow us on Instagram at @Pichardos_photography to see our latest work, behind-the-scenes moments, and client spotlights!",
+    travel: "Yes, we travel throughout Texas! We serve Dallas, Fort Worth, Houston, Austin, San Antonio, El Paso, McAllen, Waco, Tyler, Galveston, and more. Contact us with your event location for a custom travel quote.",
+    raw: "We don't deliver RAW/unedited files — our professional editing is what gives your photos that cinematic quality you see in our portfolio. Every image is carefully crafted to look its absolute best.",
+    how_many: "It depends on your package. Portrait sessions: 50–150 edited images. Quinceañeras and large events: 300–600+ edited images. Every photo in your gallery is professionally edited and worth keeping!"
+  };
+
+  const keywords = {
+    price: 'pricing', cost: 'pricing', how_much: 'pricing', package: 'pricing', rate: 'pricing',
+    book: 'booking', reserve: 'booking', schedule: 'booking', appoint: 'booking',
+    quince: 'quince', quinceañera: 'quince', xv: 'quince', 'xv años': 'quince',
+    deliver: 'delivery', when: 'delivery', gallery: 'delivery', receive: 'delivery', get_photos: 'delivery',
+    area: 'areas', city: 'areas', travel: 'travel', where: 'areas', location: 'areas',
+    prom: 'prom',
+    sweet: 'sweet16', '16': 'sweet16',
+    sport: 'sports', baseball: 'sports', soccer: 'sports', boxing: 'sports', football: 'sports',
+    instagram: 'instagram', social: 'instagram', follow: 'instagram',
+    raw: 'raw', unedited: 'raw', original: 'raw',
+    how_many: 'how_many', many: 'how_many', number: 'how_many', count: 'how_many'
+  };
+
+  function getAnswer(input) {
+    const text = input.toLowerCase().replace(/[^a-z0-9 ]/g,'');
+    for (const [kw, key] of Object.entries(keywords)) {
+      if (text.includes(kw)) return answers[key];
+    }
+    return "Great question! For the most accurate answer, please <a href='/contact/' style='color:var(--gold)'>contact us directly</a> or DM us on <a href='https://www.instagram.com/Pichardos_photography' target='_blank' style='color:var(--gold)'>Instagram @Pichardos_photography</a>. We typically respond within a few hours! 📸";
+  }
+
+  function addMsg(text, type) {
+    const msgs = document.getElementById('chat-messages');
+    const div = document.createElement('div');
+    div.className = `chat-msg ${type}`;
+    div.innerHTML = `<div class="chat-bubble-text">${text}</div>`;
+    msgs.appendChild(div);
+    msgs.scrollTop = msgs.scrollHeight;
+  }
+
+  function handleInput(val) {
+    if (!val.trim()) return;
+    addMsg(val, 'user');
+    document.getElementById('chat-input').value = '';
+    document.getElementById('quick-replies').style.display = 'none';
+    setTimeout(() => addMsg(getAnswer(val), 'bot'), 400);
+  }
+
+  document.getElementById('chat-toggle').addEventListener('click', function() {
+    const win = document.getElementById('chat-window');
+    const isOpen = win.classList.toggle('open');
+    this.setAttribute('aria-expanded', isOpen);
+    document.getElementById('chat-bubble-icon').textContent = isOpen ? '✕' : '💬';
+  });
+
+  document.getElementById('chat-send').addEventListener('click', function() {
+    handleInput(document.getElementById('chat-input').value);
+  });
+
+  document.getElementById('chat-input').addEventListener('keypress', function(e) {
+    if (e.key === 'Enter') handleInput(this.value);
+  });
+
+  document.querySelectorAll('.quick-reply').forEach(btn => {
+    btn.addEventListener('click', function() {
+      const key = this.dataset.q;
+      addMsg(this.textContent, 'user');
+      document.getElementById('quick-replies').style.display = 'none';
+      setTimeout(() => addMsg(answers[key] || getAnswer(key), 'bot'), 400);
+    });
+  });
+})();
+</script>

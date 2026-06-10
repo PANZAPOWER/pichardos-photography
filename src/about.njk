@@ -1,0 +1,140 @@
+---
+layout: layouts/base.njk
+title: "About Miguel Pichardo — Professional Photographer in Dallas, TX"
+description: "Learn about Miguel Pichardo, Dallas Texas professional photographer specializing in quinceañeras, prom, graduation, portraits and more across all of Texas."
+permalink: /about/
+---
+
+{% block schema %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Miguel Pichardo",
+  "jobTitle": "Professional Photographer",
+  "url": "{{ site.url }}/about/",
+  "description": "Dallas, TX photographer specializing in quinceañeras, graduation, prom, portraits, sports, and milestone events across Texas.",
+  "sameAs": ["{{ site.social.instagram }}", "{{ site.social.facebook }}"],
+  "worksFor": { "@type": "Organization", "name": "Pichardo's Photography", "url": "{{ site.url }}" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type":"ListItem","position":1,"name":"Home","item":"{{ site.url }}/"},
+    {"@type":"ListItem","position":2,"name":"About","item":"{{ site.url }}/about/"}
+  ]
+}
+</script>
+{% endblock %}
+
+<section class="page-hero">
+  <div class="page-hero-bg"></div>
+  <div class="container">
+    <span class="eyebrow animate-up">The Photographer</span>
+    <h1 class="animate-up delay-1">Meet Miguel Pichardo</h1>
+    <div class="gold-line center animate-up delay-2"></div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:1fr 1.5fr;gap:5rem;align-items:start;">
+      <div class="reveal">
+        <img
+          src="/assets/img/logo/logo-main.png"
+          alt="Miguel Pichardo — Pichardo's Photography"
+          loading="lazy"
+          width="500"
+          height="600"
+          style="width:100%;border-radius:var(--radius);box-shadow:var(--shadow-gold);object-fit:cover;"
+        >
+        <div style="margin-top:1.5rem;display:flex;flex-direction:column;gap:0.75rem;">
+          <a href="{{ site.social.instagram }}" target="_blank" rel="noopener" class="btn btn-gold-outline" style="justify-content:center;">
+            📸 Instagram @Pichardos_photography
+          </a>
+          <a href="{{ site.social.facebook }}" target="_blank" rel="noopener" class="btn btn-outline" style="justify-content:center;">
+            Facebook — Miguel Pichardo
+          </a>
+        </div>
+      </div>
+
+      <div class="reveal" style="animation-delay:0.15s;">
+        <span class="eyebrow">About Miguel</span>
+        <h2>The Heart Behind the Lens</h2>
+        <div class="gold-line"></div>
+
+        <p style="margin-bottom:1.5rem;">
+          Miguel Pichardo is more than a photographer — he's a visual storyteller with a deep love for the moments that define us. Based in Dallas, Texas, Miguel has spent years honing his craft across hundreds of milestone events, developing a signature style that blends cinematic lighting, editorial composition, and genuine emotional connection.
+        </p>
+
+        <p style="margin-bottom:1.5rem;color:var(--text-muted);">
+          Growing up surrounded by the rich traditions of Latino culture, Miguel understands the profound significance of a quinceañera, the milestone of a graduation, the excitement of prom night. He doesn't just photograph events — he preserves legacies. Every gallery he delivers is a time capsule of joy, love, and achievement that families will treasure for generations.
+        </p>
+
+        <p style="margin-bottom:1.5rem;color:var(--text-muted);">
+          Miguel's range is as diverse as Texas itself. Whether he's crouching in the dirt to get the perfect angle of a little league player's swing, or waiting patiently in the wings to capture the moment a quinceañera first sees her reflection in the mirror, he brings the same unwavering commitment to excellence to every frame.
+        </p>
+
+        <p style="margin-bottom:2rem;color:var(--text-muted);">
+          He serves all of Texas — from the vibrant communities of Dallas and Fort Worth to the Rio Grande Valley, from Houston to El Paso, and everywhere in between. No celebration is too far when the moment deserves to be captured perfectly.
+        </p>
+
+        <blockquote style="font-family:var(--font-serif);font-size:1.3rem;font-style:italic;color:var(--cream);border-left:2px solid var(--gold);padding-left:1.5rem;margin-bottom:2rem;">
+          "I don't take pictures. I preserve memories that will outlast all of us."
+          <cite style="display:block;font-size:0.8rem;font-style:normal;color:var(--gold);margin-top:0.5rem;font-family:var(--font-sans);letter-spacing:0.15em;text-transform:uppercase;">— Miguel Pichardo</cite>
+        </blockquote>
+
+        <a href="/contact/" class="btn btn-gold">Work With Miguel</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Specialties -->
+<section class="section" style="background:var(--dark-mid);">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="eyebrow">The Craft</span>
+      <h2>What Miguel Specializes In</h2>
+      <div class="gold-line center"></div>
+    </div>
+    <div class="grid-4 reveal">
+      {% for svc in services %}
+      <div style="text-align:center;padding:1.5rem 1rem;">
+        <span style="font-size:2.5rem;display:block;margin-bottom:0.75rem;">{{ svc.icon }}</span>
+        <h4 style="font-size:1rem;margin-bottom:0.4rem;">{{ svc.title }}</h4>
+        <p style="font-size:0.82rem;color:var(--text-muted);">{{ svc.short }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- Gallery sample -->
+<section class="section">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="eyebrow">The Work</span>
+      <h2>Selected Portfolio</h2>
+      <div class="gold-line center"></div>
+    </div>
+    <div class="gallery-masonry reveal">
+      {% for cat, imgs in galleryImages %}
+        {% if loop.index <= 3 %}
+          {% for img in imgs | slice(0, 4) %}
+          <div class="gal-item">
+            <img src="{{ img }}" alt="Photography by Miguel Pichardo" loading="lazy" width="400" height="300" data-lightbox="{{ img }}">
+            <div class="gal-overlay"><span>⊕</span></div>
+          </div>
+          {% endfor %}
+        {% endif %}
+      {% endfor %}
+    </div>
+    <div class="text-center mt-4 reveal">
+      <a href="/gallery/" class="btn btn-gold-outline">View Full Gallery</a>
+    </div>
+  </div>
+</section>

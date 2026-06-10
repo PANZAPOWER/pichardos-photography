@@ -1,0 +1,128 @@
+---
+layout: layouts/base.njk
+title: "Photography Blog — Tips, Stories & Inspiration | Pichardo's Photography"
+description: "Photography tips, quinceañera planning guides, session inspiration, and behind-the-scenes stories from Pichardo's Photography in Dallas, Texas."
+permalink: /blog/
+---
+
+{% block schema %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Blog",
+  "name": "Pichardo's Photography Blog",
+  "url": "{{ site.url }}/blog/",
+  "description": "Photography tips, session stories, and milestone inspiration from Miguel Pichardo.",
+  "author": { "@type": "Person", "name": "{{ site.owner }}" }
+}
+</script>
+{% endblock %}
+
+<section class="page-hero">
+  <div class="page-hero-bg"></div>
+  <div class="container">
+    <span class="eyebrow animate-up">The Blog</span>
+    <h1 class="animate-up delay-1">Stories, Tips & Inspiration</h1>
+    <div class="gold-line center animate-up delay-2"></div>
+    <p style="max-width:560px;margin:1rem auto 0;color:var(--text-muted);" class="animate-up delay-2">
+      Photography guides, session spotlights, planning tips, and behind-the-scenes stories from our sessions across Texas.
+    </p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    {% set posts = collections.blog %}
+    {% if posts and posts.length %}
+      <div class="grid-3">
+        {% for post in posts | reverse %}
+        <article class="card reveal">
+          {% if post.data.image %}
+          <a href="{{ post.url }}">
+            <div style="overflow:hidden;aspect-ratio:16/9;">
+              <img class="card-img" src="{{ post.data.image }}" alt="{{ post.data.title }}" loading="lazy" width="500" height="281">
+            </div>
+          </a>
+          {% endif %}
+          <div class="card-body">
+            <span class="eyebrow" style="font-size:0.6rem;margin-bottom:0.5rem;">{{ post.data.category or "Photography" }}</span>
+            <h3><a href="{{ post.url }}" style="color:inherit;">{{ post.data.title }}</a></h3>
+            <p>{{ post.data.description or post.templateContent | striptags | truncate(120) }}</p>
+            <a href="{{ post.url }}" class="btn btn-gold-outline" style="padding:0.5rem 1.2rem;font-size:0.65rem;">Read More →</a>
+          </div>
+        </article>
+        {% endfor %}
+      </div>
+    {% else %}
+      <!-- Placeholder posts using real session data -->
+      <div class="grid-3">
+
+        <article class="card reveal">
+          <a href="/contact/"><div style="overflow:hidden;aspect-ratio:16/9;"><img class="card-img" src="/assets/img/gallery/xv/xv-1.jpeg" alt="Quinceañera Planning Guide" loading="lazy" width="500" height="281"></div></a>
+          <div class="card-body">
+            <span class="eyebrow" style="font-size:0.6rem;margin-bottom:0.5rem;">Planning Guide</span>
+            <h3>How to Plan the Perfect Quinceañera Photo Session</h3>
+            <p>From the timeline to the must-have shots, everything you need to know to ensure stunning quinceañera photos that tell your complete story.</p>
+            <a href="/services/quinceanera-photography/" class="btn btn-gold-outline" style="padding:0.5rem 1.2rem;font-size:0.65rem;">Learn More →</a>
+          </div>
+        </article>
+
+        <article class="card reveal" style="animation-delay:0.1s">
+          <a href="/contact/"><div style="overflow:hidden;aspect-ratio:16/9;"><img class="card-img" src="/assets/img/gallery/prom/prom-1.jpeg" alt="Prom Photography Tips" loading="lazy" width="500" height="281"></div></a>
+          <div class="card-body">
+            <span class="eyebrow" style="font-size:0.6rem;margin-bottom:0.5rem;">Tips & Tricks</span>
+            <h3>5 Tips for Stunning Prom Photos That Look Like Magazine Covers</h3>
+            <p>Before the limo pulls up, here's how to prepare for a prom portrait session that produces photos you'll frame and share forever.</p>
+            <a href="/services/prom-photography/" class="btn btn-gold-outline" style="padding:0.5rem 1.2rem;font-size:0.65rem;">Book Prom Session →</a>
+          </div>
+        </article>
+
+        <article class="card reveal" style="animation-delay:0.2s">
+          <a href="/contact/"><div style="overflow:hidden;aspect-ratio:16/9;"><img class="card-img" src="/assets/img/gallery/graduation/graduate-fab-yards-1.jpeg" alt="Graduation Photography" loading="lazy" width="500" height="281"></div></a>
+          <div class="card-body">
+            <span class="eyebrow" style="font-size:0.6rem;margin-bottom:0.5rem;">Session Spotlight</span>
+            <h3>Graduation Photography: What to Wear, Bring, and Expect</h3>
+            <p>Your graduation is a milestone worth documenting beautifully. Here's everything you need to know before your session with Pichardo's Photography.</p>
+            <a href="/services/graduation-photography/" class="btn btn-gold-outline" style="padding:0.5rem 1.2rem;font-size:0.65rem;">Book Grad Session →</a>
+          </div>
+        </article>
+
+        <article class="card reveal" style="animation-delay:0.1s">
+          <a href="/contact/"><div style="overflow:hidden;aspect-ratio:16/9;"><img class="card-img" src="/assets/img/gallery/dance/dance-1.jpeg" alt="Dance Photography" loading="lazy" width="500" height="281"></div></a>
+          <div class="card-body">
+            <span class="eyebrow" style="font-size:0.6rem;margin-bottom:0.5rem;">The Art</span>
+            <h3>Capturing Dance: The Art of Freeze-Frame Performance Photography</h3>
+            <p>"Dance is the hidden language of the soul." — Here's how Miguel captures the power and grace of dance recitals and performances.</p>
+            <a href="/services/dance-photography/" class="btn btn-gold-outline" style="padding:0.5rem 1.2rem;font-size:0.65rem;">Read More →</a>
+          </div>
+        </article>
+
+        <article class="card reveal" style="animation-delay:0.2s">
+          <a href="/contact/"><div style="overflow:hidden;aspect-ratio:16/9;"><img class="card-img" src="/assets/img/gallery/sports/littleleaguebaseball-1.jpeg" alt="Little League Baseball Photography" loading="lazy" width="500" height="281"></div></a>
+          <div class="card-body">
+            <span class="eyebrow" style="font-size:0.6rem;margin-bottom:0.5rem;">Sports</span>
+            <h3>Little League Photography: "Success Begins With a Single Swing"</h3>
+            <p>Behind the scenes of a youth baseball photography day — and why sports photography is one of the most rewarding work we do.</p>
+            <a href="/services/sports-photography/" class="btn btn-gold-outline" style="padding:0.5rem 1.2rem;font-size:0.65rem;">Read More →</a>
+          </div>
+        </article>
+
+        <article class="card reveal" style="animation-delay:0.3s">
+          <a href="/contact/"><div style="overflow:hidden;aspect-ratio:16/9;"><img class="card-img" src="/assets/img/gallery/beautician/beautician-1.jpeg" alt="Commercial Photography" loading="lazy" width="500" height="281"></div></a>
+          <div class="card-body">
+            <span class="eyebrow" style="font-size:0.6rem;margin-bottom:0.5rem;">Business</span>
+            <h3>Why Professional Photography Is the Best Investment for Your Beauty Business</h3>
+            <p>"Confidence is the best beauty secret." — And stunning brand photography is how you share that confidence with the world.</p>
+            <a href="/services/professional-commercial-photography/" class="btn btn-gold-outline" style="padding:0.5rem 1.2rem;font-size:0.65rem;">Read More →</a>
+          </div>
+        </article>
+
+      </div>
+
+      <div class="text-center mt-4 reveal">
+        <p style="color:var(--text-muted);margin-bottom:1.5rem;">More blog posts coming soon — follow us on Instagram for daily inspiration!</p>
+        <a href="{{ site.social.instagram }}" target="_blank" rel="noopener" class="btn btn-gold-outline">@Pichardos_photography</a>
+      </div>
+    {% endif %}
+  </div>
+</section>

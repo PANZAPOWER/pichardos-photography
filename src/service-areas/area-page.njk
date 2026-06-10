@@ -1,0 +1,142 @@
+---
+layout: layouts/base.njk
+pagination:
+  data: areas
+  size: 1
+  alias: area
+permalink: /service-areas/{{ area.slug }}/
+eleventyComputed:
+  title: "Photographer in {{ area.city }}, TX | Pichardo's Photography"
+  description: "Pichardo's Photography serves {{ area.city }}, Texas — quinceañeras, prom, graduation, portraits, sports and more. Professional photography in {{ area.city }}, TX."
+  ogImage: "{{ area.heroImage }}"
+---
+
+{% block schema %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Pichardo's Photography — {{ area.city }}, TX",
+  "url": "{{ site.url }}/service-areas/{{ area.slug }}/",
+  "description": "{{ area.intro }}",
+  "areaServed": {
+    "@type": "City",
+    "name": "{{ area.city }}",
+    "containedInPlace": { "@type": "State", "name": "Texas" }
+  },
+  "parentOrganization": { "@type": "Organization", "name": "Pichardo's Photography", "url": "{{ site.url }}" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type":"ListItem","position":1,"name":"Home","item":"{{ site.url }}/"},
+    {"@type":"ListItem","position":2,"name":"Service Areas","item":"{{ site.url }}/service-areas/"},
+    {"@type":"ListItem","position":3,"name":"{{ area.city }}","item":"{{ site.url }}/service-areas/{{ area.slug }}/"}
+  ]
+}
+</script>
+{% endblock %}
+
+<section class="hero" style="min-height:65vh;">
+  <div class="hero-bg">
+    <img class="hero-bg-img" src="{{ area.heroImage }}" alt="Photography in {{ area.city }}, TX" loading="eager" width="1600" height="900">
+  </div>
+  <div class="hero-content">
+    <nav class="breadcrumb animate-up" aria-label="Breadcrumb">
+      <a href="/">Home</a> / <a href="/service-areas/">Service Areas</a> / <span>{{ area.city }}</span>
+    </nav>
+    <span class="hero-kicker animate-up delay-1">
+      <span>Serving {{ area.city }}</span>
+      <span>Texas</span>
+    </span>
+    <h1 class="animate-up delay-1" style="font-family:var(--font-serif);">
+      Photographer in {{ area.city }}, TX
+    </h1>
+    <p class="hero-tagline animate-up delay-2">
+      Professional photography for the moments that matter most — right here in {{ area.city }}.
+    </p>
+    <div class="hero-ctas animate-up delay-3">
+      <a href="/contact/" class="btn btn-gold">Book in {{ area.city }}</a>
+      <a href="/gallery/" class="btn btn-outline">View Portfolio</a>
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--dark-mid);padding:2.5rem 0;">
+  <div class="container">
+    <p style="font-family:var(--font-serif);font-size:1.15rem;color:var(--cream);max-width:800px;margin:0 auto;text-align:center;">
+      {{ area.intro }}
+    </p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;">
+      <div class="reveal">
+        <span class="eyebrow">Photography In {{ area.city }}</span>
+        <h2>Services Available in {{ area.city }}, TX</h2>
+        <div class="gold-line"></div>
+        <p style="margin-bottom:2rem;color:var(--text-muted);">
+          Pichardo's Photography travels to {{ area.city }} to capture your most treasured milestones. Whether you're celebrating a quinceañera, graduation, prom, or a portrait session, we bring our signature style and professional equipment to serve you right where you are.
+        </p>
+        <ul style="list-style:none;display:flex;flex-direction:column;gap:0.75rem;margin-bottom:2rem;">
+          {% for need in area.commonNeeds %}
+          <li style="display:flex;align-items:center;gap:0.75rem;font-size:0.9rem;color:var(--text-muted);">
+            <span style="color:var(--gold);font-size:0.65rem;">◆</span> {{ need }}
+          </li>
+          {% endfor %}
+        </ul>
+        <a href="/contact/" class="btn btn-gold">Book in {{ area.city }}</a>
+      </div>
+      <div class="reveal" style="animation-delay:0.15s;">
+        <span class="eyebrow">Local Landmarks</span>
+        <h3 style="margin-bottom:1.25rem;">Where We Shoot in {{ area.city }}</h3>
+        <p style="color:var(--text-muted);margin-bottom:1.25rem;font-size:0.9rem;">
+          {{ area.city }}'s stunning locations provide beautiful backdrops for every type of session. From iconic landmarks to hidden gems, we know the best spots.
+        </p>
+        <ul style="list-style:none;display:flex;flex-direction:column;gap:0.75rem;">
+          {% for landmark in area.landmarks %}
+          <li style="display:flex;align-items:center;gap:0.75rem;padding:0.75rem;background:var(--dark-card);border-radius:var(--radius-sm);font-size:0.88rem;color:var(--text-muted);">
+            <span style="color:var(--gold);">📍</span> {{ landmark }}
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="background:var(--dark-mid);">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="eyebrow">Our Services</span>
+      <h2>Photography Services in {{ area.city }}</h2>
+      <div class="gold-line center"></div>
+    </div>
+    <div class="grid-4 reveal">
+      {% for svc in services | slice(0,8) %}
+      <a href="/services/{{ svc.slug }}/" style="display:block;text-align:center;padding:1.5rem 1rem;background:var(--dark-card);border:1px solid rgba(255,255,255,0.06);border-radius:var(--radius);transition:all var(--transition);"
+         onmouseover="this.style.borderColor='rgba(201,168,76,0.25)'"
+         onmouseout="this.style.borderColor='rgba(255,255,255,0.06)'">
+        <span style="font-size:2rem;display:block;margin-bottom:0.6rem;">{{ svc.icon }}</span>
+        <h4 style="font-size:0.95rem;margin-bottom:0.3rem;">{{ svc.title }}</h4>
+        <p style="font-size:0.78rem;color:var(--text-muted);">{{ area.city }}, TX</p>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="banner">
+  <img class="banner-bg" src="{{ area.heroImage }}" alt="" loading="lazy" aria-hidden="true">
+  <div class="banner-content container">
+    <span class="eyebrow">{{ area.city }}, TX</span>
+    <h2>Book Your Session in {{ area.city }}</h2>
+    <p style="color:var(--text-muted);max-width:500px;margin:1rem auto 2rem;">Serving {{ area.city }} and surrounding areas. Contact us to check availability for your date.</p>
+    <a href="/contact/" class="btn btn-gold">Check Availability</a>
+  </div>
+</section>

@@ -1,0 +1,177 @@
+---
+layout: layouts/base.njk
+title: "Contact & Book a Session — Pichardo's Photography"
+description: "Book your photography session with Pichardo's Photography. Serving all of Texas — quinceañeras, prom, graduation, portraits and more. Contact us today."
+permalink: /contact/
+---
+
+{% block schema %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ContactPage",
+  "name": "Contact Pichardo's Photography",
+  "url": "{{ site.url }}/contact/",
+  "description": "Book a photography session with Miguel Pichardo. Serving all of Texas."
+}
+</script>
+{% endblock %}
+
+<section class="page-hero">
+  <div class="page-hero-bg"></div>
+  <div class="container">
+    <span class="eyebrow animate-up">Get In Touch</span>
+    <h1 class="animate-up delay-1">Book Your Session</h1>
+    <div class="gold-line center animate-up delay-2"></div>
+    <p style="max-width:550px;margin:1rem auto 0;color:var(--text-muted);" class="animate-up delay-2">
+      Ready to preserve your most important moments? Fill out the form below and we'll be in touch within 24 hours.
+    </p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:1.2fr 1fr;gap:5rem;align-items:start;">
+
+      <!-- Form -->
+      <div class="reveal">
+        <h2 style="margin-bottom:2rem;">Send Us a Message</h2>
+        <form
+          id="contact-form"
+          action="/api/lead"
+          method="POST"
+          novalidate
+        >
+          <!-- Honeypot -->
+          <input type="text" name="_honey" class="honeypot" tabindex="-1" autocomplete="off">
+
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="name">Your Name *</label>
+              <input type="text" id="name" name="name" required autocomplete="name" placeholder="Maria Rodriguez">
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address *</label>
+              <input type="email" id="email" name="email" required autocomplete="email" placeholder="maria@email.com">
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input type="tel" id="phone" name="phone" autocomplete="tel" placeholder="(214) 555-0100">
+            </div>
+            <div class="form-group">
+              <label for="service">Type of Session *</label>
+              <select id="service" name="service" required>
+                <option value="" disabled selected>Select a service…</option>
+                {% for svc in services %}
+                <option value="{{ svc.slug }}">{{ svc.title }}</option>
+                {% endfor %}
+                <option value="other">Other / Not Sure</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="event-date">Event Date</label>
+              <input type="date" id="event-date" name="event_date">
+            </div>
+            <div class="form-group">
+              <label for="city">City / Location</label>
+              <input type="text" id="city" name="city" placeholder="Dallas, TX">
+            </div>
+            <div class="form-group form-full">
+              <label for="message">Tell Us About Your Event *</label>
+              <textarea id="message" name="message" required placeholder="Tell us about your event — the date, location, how many guests, and anything specific you're envisioning…"></textarea>
+            </div>
+          </div>
+
+          <div style="margin-top:1.5rem;">
+            <button type="submit" class="btn btn-gold" style="width:100%;justify-content:center;padding:1.1rem;">
+              Send Message — Book My Session
+            </button>
+          </div>
+          <p style="font-size:0.78rem;color:var(--text-muted);text-align:center;margin-top:0.75rem;">
+            We typically respond within 24 hours · All inquiries are confidential
+          </p>
+        </form>
+      </div>
+
+      <!-- Info -->
+      <div class="reveal" style="animation-delay:0.15s;">
+        <h3 style="margin-bottom:1.5rem;">Contact Information</h3>
+
+        <div style="display:flex;flex-direction:column;gap:1.5rem;margin-bottom:2.5rem;">
+          <div style="display:flex;align-items:flex-start;gap:1rem;">
+            <span style="color:var(--gold);font-size:1.2rem;margin-top:0.1rem;">📍</span>
+            <div>
+              <span style="font-weight:600;display:block;margin-bottom:0.2rem;">Based In</span>
+              <span style="color:var(--text-muted);font-size:0.9rem;">Dallas, Texas — Serving all of TX</span>
+            </div>
+          </div>
+          <div style="display:flex;align-items:flex-start;gap:1rem;">
+            <span style="color:var(--gold);font-size:1.2rem;margin-top:0.1rem;">📸</span>
+            <div>
+              <span style="font-weight:600;display:block;margin-bottom:0.2rem;">Instagram</span>
+              <a href="{{ site.social.instagram }}" target="_blank" rel="noopener" style="color:var(--text-muted);font-size:0.9rem;">@Pichardos_photography</a>
+            </div>
+          </div>
+          <div style="display:flex;align-items:flex-start;gap:1rem;">
+            <span style="color:var(--gold);font-size:1.2rem;margin-top:0.1rem;">👤</span>
+            <div>
+              <span style="font-weight:600;display:block;margin-bottom:0.2rem;">Facebook</span>
+              <a href="{{ site.social.facebook }}" target="_blank" rel="noopener" style="color:var(--text-muted);font-size:0.9rem;">Miguel Pichardo</a>
+            </div>
+          </div>
+        </div>
+
+        <div style="background:var(--dark-card);border:1px solid rgba(201,168,76,0.15);border-radius:var(--radius);padding:1.75rem;margin-bottom:1.5rem;">
+          <h4 style="margin-bottom:1rem;font-size:1rem;">Booking Tips</h4>
+          <ul style="list-style:none;display:flex;flex-direction:column;gap:0.75rem;">
+            <li style="font-size:0.85rem;color:var(--text-muted);display:flex;gap:0.5rem;"><span style="color:var(--gold);">◆</span> Book 6–12 months early for quinceañeras</li>
+            <li style="font-size:0.85rem;color:var(--text-muted);display:flex;gap:0.5rem;"><span style="color:var(--gold);">◆</span> Prom & graduation season fills fast</li>
+            <li style="font-size:0.85rem;color:var(--text-muted);display:flex;gap:0.5rem;"><span style="color:var(--gold);">◆</span> Portrait sessions available year-round</li>
+            <li style="font-size:0.85rem;color:var(--text-muted);display:flex;gap:0.5rem;"><span style="color:var(--gold);">◆</span> We travel throughout Texas</li>
+            <li style="font-size:0.85rem;color:var(--text-muted);display:flex;gap:0.5rem;"><span style="color:var(--gold);">◆</span> Payment plans available</li>
+          </ul>
+        </div>
+
+        <div style="background:var(--dark-card);border:1px solid rgba(201,168,76,0.15);border-radius:var(--radius);padding:1.75rem;">
+          <h4 style="margin-bottom:0.75rem;font-size:1rem;">Follow Our Work</h4>
+          <p style="font-size:0.85rem;color:var(--text-muted);margin-bottom:1rem;">See the latest sessions, behind-the-scenes moments, and client spotlights on our social media.</p>
+          <div style="display:flex;gap:0.75rem;">
+            <a href="{{ site.social.instagram }}" target="_blank" rel="noopener" class="btn btn-gold-outline" style="padding:0.5rem 1rem;font-size:0.65rem;">Instagram</a>
+            <a href="{{ site.social.facebook }}" target="_blank" rel="noopener" class="btn btn-outline" style="padding:0.5rem 1rem;font-size:0.65rem;">Facebook</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<script>
+document.getElementById('contact-form').addEventListener('submit', async function(e) {
+  e.preventDefault();
+  const btn = this.querySelector('button[type="submit"]');
+  btn.textContent = 'Sending…';
+  btn.disabled = true;
+
+  const data = new FormData(this);
+  const obj = {};
+  data.forEach((v, k) => obj[k] = v);
+
+  try {
+    const res = await fetch('/api/lead', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(obj)
+    });
+    if (res.ok || res.redirected) {
+      window.location.href = '/thank-you/';
+    } else {
+      btn.textContent = 'Send Message — Book My Session';
+      btn.disabled = false;
+      alert('Something went wrong. Please try again or DM us on Instagram.');
+    }
+  } catch(err) {
+    window.location.href = '/thank-you/';
+  }
+});
+</script>

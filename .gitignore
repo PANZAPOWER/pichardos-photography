@@ -1,0 +1,6 @@
+node_modules/
+_site/
+.wrangler/
+*.log
+.env
+.env.local

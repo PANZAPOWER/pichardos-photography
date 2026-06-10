@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <title>{% if title %}{{ title }} | {% endif %}{{ site.name }}</title>
+  <meta name="description" content="{{ description or site.description }}">
+  <meta name="keywords" content="{{ keywords or site.keywords }}">
+  <link rel="canonical" href="{{ site.url }}{{ page.url }}">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="{{ ogType or 'website' }}">
+  <meta property="og:title" content="{{ title or site.name }}">
+  <meta property="og:description" content="{{ description or site.description }}">
+  <meta property="og:url" content="{{ site.url }}{{ page.url }}">
+  <meta property="og:image" content="{{ site.url }}{{ ogImage or '/assets/img/logo/logo-main.png' }}">
+  <meta property="og:site_name" content="{{ site.name }}">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{ title or site.name }}">
+  <meta name="twitter:description" content="{{ description or site.description }}">
+  <meta name="twitter:image" content="{{ site.url }}{{ ogImage or '/assets/img/logo/logo-main.png' }}">
+
+  <!-- Robots -->
+  <meta name="robots" content="index, follow, max-image-preview:large">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="/assets/img/logo/logo-main.png">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/assets/css/main.css">
+
+  <!-- JSON-LD Global -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "{{ site.name }}",
+    "url": "{{ site.url }}",
+    "logo": "{{ site.url }}{{ site.logo }}",
+    "description": "{{ site.description }}",
+    "foundingDate": "{{ site.founded }}",
+    "sameAs": [
+      "{{ site.social.instagram }}",
+      "{{ site.social.facebook }}"
+    ],
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "contactType": "Customer Service",
+      "areaServed": "TX",
+      "availableLanguage": ["English", "Spanish"]
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "{{ site.name }}",
+    "url": "{{ site.url }}",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "{{ site.url }}/gallery/?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
+
+  {% block schema %}{% endblock %}
+</head>
+<body>
+
+  <!-- HEADER -->
+  {% include "components/header.njk" %}
+
+  <!-- MAIN -->
+  <main id="main-content">
+    {% block content %}{% endblock %}
+  </main>
+
+  <!-- FOOTER -->
+  {% include "components/footer.njk" %}
+
+  <!-- CHATBOT -->
+  {% include "components/chatbot.njk" %}
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
+    <button class="lightbox-close" id="lightbox-close" aria-label="Close">✕</button>
+    <button class="lightbox-prev" id="lightbox-prev" aria-label="Previous">‹</button>
+    <img id="lightbox-img" src="" alt="">
+    <button class="lightbox-next" id="lightbox-next" aria-label="Next">›</button>
+  </div>
+
+  <!-- Mobile Call Bar -->
+  {% if site.phone %}
+  <div class="mobile-call-bar" role="complementary">
+    <a href="tel:{{ site.phone }}" aria-label="Call Pichardo's Photography">
+      📞 Call Now — {{ site.phoneDisplay }}
+    </a>
+  </div>
+  {% else %}
+  <div class="mobile-call-bar" role="complementary">
+    <a href="/contact/" aria-label="Book a session">
+      📸 Book Your Session — Contact Us Today
+    </a>
+  </div>
+  {% endif %}
+
+  <!-- JS -->
+  <script src="/assets/js/main.js"></script>
+
+</body>
+</html>

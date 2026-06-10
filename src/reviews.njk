@@ -1,0 +1,75 @@
+---
+layout: layouts/base.njk
+title: "Client Reviews — Pichardo's Photography"
+description: "Read 5-star reviews from clients of Pichardo's Photography across Texas. See why families trust Miguel Pichardo to capture their most important moments."
+permalink: /reviews/
+---
+
+{% block schema %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "{{ site.name }}",
+  "url": "{{ site.url }}",
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5.0",
+    "bestRating": "5",
+    "worstRating": "1",
+    "ratingCount": "{{ reviews | length }}"
+  },
+  "review": [{% for review in reviews %}{
+    "@type": "Review",
+    "author": { "@type": "Person", "name": "{{ review.name }}" },
+    "reviewRating": { "@type": "Rating", "ratingValue": "{{ review.rating }}", "bestRating": "5" },
+    "reviewBody": "{{ review.text }}",
+    "datePublished": "{{ review.date }}"
+  }{% if not loop.last %},{% endif %}{% endfor %}]
+}
+</script>
+{% endblock %}
+
+<section class="page-hero">
+  <div class="page-hero-bg"></div>
+  <div class="container">
+    <span class="eyebrow animate-up">Client Love</span>
+    <h1 class="animate-up delay-1">What Families Say</h1>
+    <div class="gold-line center animate-up delay-2"></div>
+    <div style="display:flex;align-items:center;justify-content:center;gap:0.5rem;margin-top:1rem;" class="animate-up delay-2">
+      <div style="display:flex;gap:3px;">{% for i in range(0,5) %}<span style="color:var(--gold);font-size:1.3rem;">★</span>{% endfor %}</div>
+      <span style="font-size:1.1rem;font-family:var(--font-serif);">5.0 — {{ reviews | length }} Reviews</span>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="grid-3 reveal">
+      {% for review in reviews %}
+      <article class="review-card" itemscope itemtype="https://schema.org/Review">
+        <div class="stars" aria-label="{{ review.rating }} out of 5 stars">
+          {% for i in range(0, review.rating) %}<span aria-hidden="true">★</span>{% endfor %}
+        </div>
+        <p class="review-text" itemprop="reviewBody">"{{ review.text }}"</p>
+        <div class="review-author">
+          <div class="review-avatar" aria-hidden="true">{{ review.name[0] }}</div>
+          <div>
+            <span class="review-name" itemprop="author">{{ review.name }}</span>
+            <span class="review-meta">{{ review.event }} · {{ review.city }}</span>
+          </div>
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section" style="background:var(--dark-mid);">
+  <div class="container text-center">
+    <span class="eyebrow">Your Turn</span>
+    <h2 style="margin-bottom:1rem;">Ready to Create Your Story?</h2>
+    <p style="max-width:500px;margin:0 auto 2rem;color:var(--text-muted);">Join hundreds of Texas families who've trusted Pichardo's Photography with their most important moments.</p>
+    <a href="/contact/" class="btn btn-gold">Book Your Session</a>
+  </div>
+</section>

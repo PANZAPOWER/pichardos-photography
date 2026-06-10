@@ -1,0 +1,25 @@
+{
+  "name": "Pichardo's Photography",
+  "tagline": "Capturing Moments • Creating Memories",
+  "owner": "Miguel Pichardo",
+  "email": "pichardosphotography@gmail.com",
+  "phone": "",
+  "phoneDisplay": "",
+  "address": {
+    "city": "Dallas",
+    "state": "TX",
+    "zip": ""
+  },
+  "url": "https://pichardosphotography.com",
+  "logo": "/assets/img/logo/logo-main.png",
+  "social": {
+    "instagram": "https://www.instagram.com/Pichardos_photography",
+    "facebook": "https://www.facebook.com/miguel.pichardo.14"
+  },
+  "serviceAreas": ["Dallas", "Fort Worth", "Austin", "Houston", "Galveston", "El Paso", "McAllen", "Tyler", "Waco"],
+  "primaryColor": "#c9a84c",
+  "description": "Pichardo's Photography — Dallas, TX's premier photography studio capturing quinceañeras, sweet 16s, proms, graduations, portraits, sports, and life's most treasured milestones across all of Texas.",
+  "keywords": "photography Dallas TX, quinceañera photographer Dallas, sweet 16 photographer Texas, prom photography DFW, graduation photographer Dallas, portrait photographer Texas, Pichardo Photography",
+  "founded": "2018",
+  "instagram_handle": "@Pichardos_photography"
+}
