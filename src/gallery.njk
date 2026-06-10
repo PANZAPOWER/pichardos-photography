@@ -2,7 +2,7 @@
 layout: layouts/base.njk
 title: "Gallery — Photography Portfolio"
 description: "Browse Pichardo's Photography portfolio — quinceañeras, sweet 16, prom, graduation, portraits, sports, dance and more across Texas."
-ogImage: /assets/img/gallery/xv/xv-1.jpeg
+ogImage: /assets/img/gallery/xv/aleyah-xv-1.JPEG
 permalink: /gallery/
 ---
 
@@ -35,18 +35,18 @@ permalink: /gallery/
   <div class="container">
 
     <!-- Category Nav -->
-    <div style="display:flex;gap:0.75rem;flex-wrap:wrap;justify-content:center;margin-bottom:3rem;" class="reveal">
-      <button class="quick-reply active" onclick="filterGallery('all')" style="border-color:var(--gold);background:var(--gold);color:var(--black);">All</button>
-      <button class="quick-reply" onclick="filterGallery('xv')">Quinceañera</button>
-      <button class="quick-reply" onclick="filterGallery('sweet16')">Sweet 16</button>
-      <button class="quick-reply" onclick="filterGallery('prom')">Prom</button>
-      <button class="quick-reply" onclick="filterGallery('graduation')">Graduation</button>
-      <button class="quick-reply" onclick="filterGallery('portraits')">Portraits</button>
-      <button class="quick-reply" onclick="filterGallery('dance')">Dance</button>
-      <button class="quick-reply" onclick="filterGallery('sports')">Sports</button>
-      <button class="quick-reply" onclick="filterGallery('boxing')">Boxing</button>
-      <button class="quick-reply" onclick="filterGallery('beautician')">Commercial</button>
-      <button class="quick-reply" onclick="filterGallery('sessions')">Sessions</button>
+    <div class="gallery-filter-bar reveal">
+      <button class="gf-btn active" onclick="filterGallery('all')">All</button>
+      <button class="gf-btn" onclick="filterGallery('xv')">Quinceañera</button>
+      <button class="gf-btn" onclick="filterGallery('sweet16')">Sweet 16</button>
+      <button class="gf-btn" onclick="filterGallery('prom')">Prom</button>
+      <button class="gf-btn" onclick="filterGallery('graduation')">Graduation</button>
+      <button class="gf-btn" onclick="filterGallery('portraits')">Portraits</button>
+      <button class="gf-btn" onclick="filterGallery('dance')">Dance</button>
+      <button class="gf-btn" onclick="filterGallery('sports')">Sports</button>
+      <button class="gf-btn" onclick="filterGallery('boxing')">Boxing</button>
+      <button class="gf-btn" onclick="filterGallery('beautician')">Commercial</button>
+      <button class="gf-btn" onclick="filterGallery('sessions')">Sessions</button>
     </div>
 
     <!-- Masonry Grid -->

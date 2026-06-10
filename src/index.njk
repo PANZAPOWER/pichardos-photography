@@ -16,21 +16,14 @@ ogImage: /assets/img/gallery/xv/aleyah-xv-1.JPEG
   "url": "{{ site.url }}",
   "logo": "{{ site.url }}{{ site.logo }}",
   "image": ["{{ site.url }}/assets/img/gallery/xv/aleyah-xv-1.JPEG","{{ site.url }}/assets/img/gallery/prom/prom-10.JPEG","{{ site.url }}/assets/img/gallery/graduation/graduate--10.JPEG"],
-  "founder": {
-    "@type": "Person",
-    "name": "{{ site.owner }}"
-  },
+  "founder": { "@type": "Person", "name": "{{ site.owner }}" },
   "address": {
     "@type": "PostalAddress",
     "addressLocality": "{{ site.address.city }}",
     "addressRegion": "{{ site.address.state }}",
     "addressCountry": "US"
   },
-  "geo": {
-    "@type": "GeoCoordinates",
-    "latitude": "32.7767",
-    "longitude": "-96.7970"
-  },
+  "geo": { "@type": "GeoCoordinates", "latitude": "32.7767", "longitude": "-96.7970" },
   "areaServed": [{% for area in areas %}"{{ area.city }}, TX"{% if not loop.last %},{% endif %}{% endfor %}],
   "sameAs": ["{{ site.social.instagram }}","{{ site.social.facebook }}"],
   "hasOfferCatalog": {
@@ -65,33 +58,42 @@ ogImage: /assets/img/gallery/xv/aleyah-xv-1.JPEG
 </script>
 {% endblock %}
 
-<!-- ═══════════════════════════════════════════════
-  HERO
-═══════════════════════════════════════════════ -->
-<section class="hero" aria-label="Hero">
+
+<!-- ══════════════════════════════════════════════
+  CINEMATIC HERO
+══════════════════════════════════════════════ -->
+<section class="hero" aria-label="Hero" style="min-height:100vh;">
   <div class="hero-bg">
     <img
       class="hero-bg-img"
       src="/assets/img/gallery/xv/aleyah-xv-1.JPEG"
-      alt="Elegant quinceañera portrait by Pichardo's Photography"
-      width="1600" height="900"
+      alt="Elegant quinceañera portrait by Pichardo's Photography Dallas"
+      width="1920" height="1080"
       loading="eager"
       fetchpriority="high"
-      data-images='["/assets/img/gallery/xv/aleyah-xv-1.JPEG","/assets/img/gallery/prom/prom-10.JPEG","/assets/img/gallery/graduation/graduate--10.JPEG","/assets/img/gallery/portraits/portraits-108.JPEG","/assets/img/gallery/sweet16/sweet16-125.JPEG","/assets/img/gallery/sessions/dunne-1.JPEG"]'
+      data-images='[
+        "/assets/img/gallery/xv/aleyah-xv-1.JPEG",
+        "/assets/img/gallery/prom/prom-10.JPEG",
+        "/assets/img/gallery/graduation/graduate--10.JPEG",
+        "/assets/img/gallery/portraits/portraits-108.JPEG",
+        "/assets/img/gallery/sweet16/sweet16-125.JPEG",
+        "/assets/img/gallery/sessions/dunne-1.JPEG",
+        "/assets/img/gallery/boxing/boxing-1AD842F6-B47D-4303-8195-367FA3CCB100-2.JPEG"
+      ]'
     >
   </div>
 
   <div class="hero-content">
-    <div class="hero-kicker">
-      <span>Capturing Moments</span>
-      <span>Creating Memories</span>
+    <div class="hero-kicker animate-up">
+      <span>Est. Dallas, Texas</span>
+      <span>Since {{ site.founded }}</span>
     </div>
 
-    <h1 class="hero-title animate-up">Pichardo's</h1>
-    <p class="hero-subtitle animate-up delay-1">Photography · Dallas, Texas</p>
+    <h1 class="hero-title animate-up delay-1">Pichardo's</h1>
+    <p class="hero-subtitle animate-up delay-2" style="font-size:0.78rem;letter-spacing:0.45em;margin-bottom:2rem;">Photography</p>
 
     <p class="hero-tagline animate-up delay-2">
-      Every milestone deserves to be remembered exactly as it felt —<br>
+      Every milestone deserves to be remembered exactly as it felt —
       beautiful, alive, and forever yours.
     </p>
 
@@ -100,26 +102,33 @@ ogImage: /assets/img/gallery/xv/aleyah-xv-1.JPEG
       <a href="/gallery/" class="btn btn-outline">View Portfolio</a>
     </div>
 
-    <div style="margin-top: 3.5rem; display: flex; gap: 2.5rem; flex-wrap: wrap;" class="animate-up delay-4">
+    <div style="margin-top:3.5rem;display:flex;gap:3rem;flex-wrap:wrap;" class="animate-up delay-4">
       <div>
         <span style="font-family:var(--font-script);font-size:2.8rem;color:var(--gold);display:block;line-height:1;">500+</span>
-        <span style="font-size:0.6rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--text-muted);">Sessions Captured</span>
+        <span style="font-size:0.58rem;letter-spacing:0.25em;text-transform:uppercase;color:rgba(255,255,255,0.35);">Sessions</span>
       </div>
       <div>
         <span style="font-family:var(--font-script);font-size:2.8rem;color:var(--gold);display:block;line-height:1;">9</span>
-        <span style="font-size:0.6rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--text-muted);">Texas Cities</span>
+        <span style="font-size:0.58rem;letter-spacing:0.25em;text-transform:uppercase;color:rgba(255,255,255,0.35);">Texas Cities</span>
       </div>
       <div>
         <span style="font-family:var(--font-script);font-size:2.8rem;color:var(--gold);display:block;line-height:1;">100%</span>
-        <span style="font-size:0.6rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--text-muted);">5-Star Reviews</span>
+        <span style="font-size:0.58rem;letter-spacing:0.25em;text-transform:uppercase;color:rgba(255,255,255,0.35);">5-Star Reviews</span>
       </div>
     </div>
   </div>
+
+  <!-- Scroll indicator -->
+  <a href="#services" class="scroll-indicator" aria-label="Scroll to services">
+    <span class="scroll-indicator-label">Scroll</span>
+    <span class="scroll-indicator-line"></span>
+  </a>
 </section>
 
-<!-- ═══════════════════════════════════════════════
+
+<!-- ══════════════════════════════════════════════
   TRUST STRIP
-═══════════════════════════════════════════════ -->
+══════════════════════════════════════════════ -->
 <div class="trust-strip">
   <div class="container">
     <div class="trust-items">
@@ -127,76 +136,79 @@ ogImage: /assets/img/gallery/xv/aleyah-xv-1.JPEG
       <div class="trust-item"><span class="trust-icon">📍</span> All of Texas</div>
       <div class="trust-item"><span class="trust-icon">📸</span> 500+ Sessions</div>
       <div class="trust-item"><span class="trust-icon">💛</span> Bilingual EN/ES</div>
-      <div class="trust-item"><span class="trust-icon">✦</span> Signature Editing Style</div>
+      <div class="trust-item"><span class="trust-icon">✦</span> Signature Editing</div>
       <div class="trust-item"><span class="trust-icon">🏆</span> 8+ Years Experience</div>
     </div>
   </div>
 </div>
 
-<!-- ═══════════════════════════════════════════════
+
+<!-- ══════════════════════════════════════════════
   PHOTO MARQUEE STRIP
-═══════════════════════════════════════════════ -->
+══════════════════════════════════════════════ -->
 <div class="photo-marquee" aria-hidden="true">
   <div class="marquee-track">
-    <img class="marquee-photo" src="/assets/img/gallery/xv/aleyah-xv-1.JPEG"     alt="">
-    <img class="marquee-photo" src="/assets/img/gallery/prom/prom-10.JPEG"         alt="">
-    <img class="marquee-photo" src="/assets/img/gallery/graduation/graduate--10.JPEG" alt="">
-    <img class="marquee-photo" src="/assets/img/gallery/sweet16/sweet16-125.JPEG"  alt="">
-    <img class="marquee-photo" src="/assets/img/gallery/portraits/portraits-108.JPEG" alt="">
-    <img class="marquee-photo" src="/assets/img/gallery/sports/littleleaguebaseball-1F00DB4D-CC24-47D5-8B5A-8CF030AB9B62.JPEG" alt="">
-    <img class="marquee-photo" src="/assets/img/gallery/boxing/boxing-05E1BBA5-D353-494A-9E37-A98C94093953-2.JPEG" alt="">
-    <img class="marquee-photo" src="/assets/img/gallery/sessions/dunne-1.JPEG"     alt="">
-    <img class="marquee-photo" src="/assets/img/gallery/xv/xv-15.JPEG"             alt="">
-    <img class="marquee-photo" src="/assets/img/gallery/prom/prom-100.JPEG"        alt="">
-    <img class="marquee-photo" src="/assets/img/gallery/dance/dance-0C275F9D-EC42-467B-B1CC-ED2D8103BF9D.JPEG" alt="">
-    <img class="marquee-photo" src="/assets/img/gallery/beautician/beautician-000AFC33-24EF-47E4-884A-2DF9FFC4A4AF.JPG" alt="">
+    <img class="marquee-photo" src="/assets/img/gallery/xv/aleyah-xv-1.JPEG"       alt="" loading="lazy">
+    <img class="marquee-photo" src="/assets/img/gallery/prom/prom-10.JPEG"           alt="" loading="lazy">
+    <img class="marquee-photo" src="/assets/img/gallery/graduation/graduate--10.JPEG" alt="" loading="lazy">
+    <img class="marquee-photo" src="/assets/img/gallery/sweet16/sweet16-125.JPEG"    alt="" loading="lazy">
+    <img class="marquee-photo" src="/assets/img/gallery/portraits/portraits-108.JPEG" alt="" loading="lazy">
+    <img class="marquee-photo" src="/assets/img/gallery/sports/littleleaguebaseball-1F00DB4D-CC24-47D5-8B5A-8CF030AB9B62.JPEG" alt="" loading="lazy">
+    <img class="marquee-photo" src="/assets/img/gallery/boxing/boxing-05E1BBA5-D353-494A-9E37-A98C94093953-2.JPEG" alt="" loading="lazy">
+    <img class="marquee-photo" src="/assets/img/gallery/sessions/dunne-1.JPEG"       alt="" loading="lazy">
+    <img class="marquee-photo" src="/assets/img/gallery/xv/xv-15.JPEG"               alt="" loading="lazy">
+    <img class="marquee-photo" src="/assets/img/gallery/dance/dance-0C275F9D-EC42-467B-B1CC-ED2D8103BF9D.JPEG" alt="" loading="lazy">
+    <img class="marquee-photo" src="/assets/img/gallery/beautician/beautician-000AFC33-24EF-47E4-884A-2DF9FFC4A4AF.JPG" alt="" loading="lazy">
+    <img class="marquee-photo" src="/assets/img/gallery/prom/prom-215.JPEG"           alt="" loading="lazy">
     <!-- Duplicate for seamless loop -->
-    <img class="marquee-photo" src="/assets/img/gallery/xv/aleyah-xv-1.JPEG"     alt="">
-    <img class="marquee-photo" src="/assets/img/gallery/prom/prom-10.JPEG"         alt="">
-    <img class="marquee-photo" src="/assets/img/gallery/graduation/graduate--10.JPEG" alt="">
-    <img class="marquee-photo" src="/assets/img/gallery/sweet16/sweet16-125.JPEG"  alt="">
-    <img class="marquee-photo" src="/assets/img/gallery/portraits/portraits-108.JPEG" alt="">
-    <img class="marquee-photo" src="/assets/img/gallery/sports/littleleaguebaseball-1F00DB4D-CC24-47D5-8B5A-8CF030AB9B62.JPEG" alt="">
-    <img class="marquee-photo" src="/assets/img/gallery/boxing/boxing-05E1BBA5-D353-494A-9E37-A98C94093953-2.JPEG" alt="">
-    <img class="marquee-photo" src="/assets/img/gallery/sessions/dunne-1.JPEG"     alt="">
-    <img class="marquee-photo" src="/assets/img/gallery/xv/xv-15.JPEG"             alt="">
-    <img class="marquee-photo" src="/assets/img/gallery/prom/prom-100.JPEG"        alt="">
-    <img class="marquee-photo" src="/assets/img/gallery/dance/dance-0C275F9D-EC42-467B-B1CC-ED2D8103BF9D.JPEG" alt="">
-    <img class="marquee-photo" src="/assets/img/gallery/beautician/beautician-000AFC33-24EF-47E4-884A-2DF9FFC4A4AF.JPG" alt="">
+    <img class="marquee-photo" src="/assets/img/gallery/xv/aleyah-xv-1.JPEG"       alt="" loading="lazy">
+    <img class="marquee-photo" src="/assets/img/gallery/prom/prom-10.JPEG"           alt="" loading="lazy">
+    <img class="marquee-photo" src="/assets/img/gallery/graduation/graduate--10.JPEG" alt="" loading="lazy">
+    <img class="marquee-photo" src="/assets/img/gallery/sweet16/sweet16-125.JPEG"    alt="" loading="lazy">
+    <img class="marquee-photo" src="/assets/img/gallery/portraits/portraits-108.JPEG" alt="" loading="lazy">
+    <img class="marquee-photo" src="/assets/img/gallery/sports/littleleaguebaseball-1F00DB4D-CC24-47D5-8B5A-8CF030AB9B62.JPEG" alt="" loading="lazy">
+    <img class="marquee-photo" src="/assets/img/gallery/boxing/boxing-05E1BBA5-D353-494A-9E37-A98C94093953-2.JPEG" alt="" loading="lazy">
+    <img class="marquee-photo" src="/assets/img/gallery/sessions/dunne-1.JPEG"       alt="" loading="lazy">
+    <img class="marquee-photo" src="/assets/img/gallery/xv/xv-15.JPEG"               alt="" loading="lazy">
+    <img class="marquee-photo" src="/assets/img/gallery/dance/dance-0C275F9D-EC42-467B-B1CC-ED2D8103BF9D.JPEG" alt="" loading="lazy">
+    <img class="marquee-photo" src="/assets/img/gallery/beautician/beautician-000AFC33-24EF-47E4-884A-2DF9FFC4A4AF.JPG" alt="" loading="lazy">
+    <img class="marquee-photo" src="/assets/img/gallery/prom/prom-215.JPEG"           alt="" loading="lazy">
   </div>
 </div>
 
-<!-- ═══════════════════════════════════════════════
-  INTRO QUOTE
-═══════════════════════════════════════════════ -->
-<section class="section-sm" style="background: var(--dark-mid);">
-  <div class="container">
-    <div class="quote-block reveal">
-      <span class="quote-mark">"</span>
-      <blockquote>
-        Your story deserves to be told with artistry, passion, and precision —
-        because these moments never come twice.
-      </blockquote>
-      <cite>— Miguel Pichardo, Founder</cite>
-    </div>
+
+<!-- ══════════════════════════════════════════════
+  STATEMENT TEXT
+══════════════════════════════════════════════ -->
+<section class="statement-section" style="background:var(--dark-mid);">
+  <div class="statement-ornament">
+    <span class="statement-ornament-gem">✦ ✦ ✦</span>
+  </div>
+  <p class="statement-text reveal">
+    "Photography is the art of frozen time — the ability to store emotion and feeling and all the things that go into a moment that will never come again."
+  </p>
+  <span class="statement-attr reveal">— Destin Sparks</span>
+  <div class="statement-ornament" style="margin-top:2rem;">
+    <span class="statement-ornament-gem">✦ ✦ ✦</span>
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════════
+
+<!-- ══════════════════════════════════════════════
   SERVICES
-═══════════════════════════════════════════════ -->
+══════════════════════════════════════════════ -->
 <section class="section" id="services">
   <div class="container">
     <div class="section-header reveal">
       <span class="eyebrow">What We Capture</span>
       <h2>Photography for Life's Greatest Milestones</h2>
       <div class="gold-line center"></div>
-      <p>From quinceañeras to championships, every event deserves to be immortalized by someone who truly cares about the art.</p>
+      <p>From quinceañeras to championships, every moment deserves to be immortalized by someone who truly cares about the art.</p>
     </div>
 
-    <div style="display:grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem;">
+    <div class="services-8-grid">
       {% for svc in services %}
-      <div class="reveal" style="animation-delay: {{ loop.index0 * 0.08 }}s">
+      <div class="reveal" style="animation-delay:{{ loop.index0 * 0.07 }}s;">
         <a href="/services/{{ svc.slug }}/" class="service-card" style="display:block;">
           <img
             src="{{ svc.heroImage }}"
@@ -208,7 +220,7 @@ ogImage: /assets/img/gallery/xv/aleyah-xv-1.JPEG
             <span class="service-card-icon">{{ svc.icon }}</span>
             <h3>{{ svc.title }}</h3>
             <p>{{ svc.short }}</p>
-            <span class="service-card-link">View Service →</span>
+            <span class="service-card-link">Explore →</span>
           </div>
         </a>
       </div>
@@ -221,69 +233,118 @@ ogImage: /assets/img/gallery/xv/aleyah-xv-1.JPEG
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════════
-  BENTO GALLERY MOSAIC
-═══════════════════════════════════════════════ -->
-<section class="section" style="background: var(--dark-mid); padding-top: 0;">
-  <div style="max-width: 100%;">
-    <div class="container section-sm">
-      <div class="section-header reveal">
-        <span class="eyebrow">The Portfolio</span>
-        <h2>A Glimpse Into Our Work</h2>
-        <div class="gold-line center"></div>
-        <p>Real sessions. Real moments. Artistically elevated.</p>
-      </div>
-    </div>
 
-    <!-- Editorial bento mosaic -->
-    <div class="gallery-bento reveal">
-      <a href="/gallery/xv/" class="bento-item" aria-label="Quinceañera gallery">
-        <img src="/assets/img/gallery/xv/aleyah-xv-1.JPEG" alt="Quinceañera photography Dallas" loading="lazy">
-        <div class="bento-label">
-          <span class="bento-label-text">Quinceañeras</span>
-          <span class="bento-label-arrow">VIEW →</span>
-        </div>
-      </a>
-      <a href="/gallery/prom/" class="bento-item" aria-label="Prom gallery">
-        <img src="/assets/img/gallery/prom/prom-100.JPEG" alt="Prom photography Dallas" loading="lazy">
-        <div class="bento-label">
-          <span class="bento-label-text">Prom</span>
-          <span class="bento-label-arrow">VIEW →</span>
-        </div>
-      </a>
-      <a href="/gallery/graduation/" class="bento-item" aria-label="Graduation gallery">
-        <img src="/assets/img/gallery/graduation/graduate--10.JPEG" alt="Graduation photography Texas" loading="lazy">
-        <div class="bento-label">
-          <span class="bento-label-text">Graduation</span>
-          <span class="bento-label-arrow">VIEW →</span>
-        </div>
-      </a>
-      <a href="/gallery/portraits/" class="bento-item" aria-label="Portrait gallery">
-        <img src="/assets/img/gallery/portraits/portraits-108.JPEG" alt="Portrait photography Dallas" loading="lazy">
-        <div class="bento-label">
-          <span class="bento-label-text">Portraits</span>
-          <span class="bento-label-arrow">VIEW →</span>
-        </div>
-      </a>
-      <a href="/gallery/sweet16/" class="bento-item" aria-label="Sweet 16 gallery">
-        <img src="/assets/img/gallery/sweet16/sweet16-125.JPEG" alt="Sweet 16 photography Dallas" loading="lazy">
-        <div class="bento-label">
-          <span class="bento-label-text">Sweet 16</span>
-          <span class="bento-label-arrow">VIEW →</span>
-        </div>
-      </a>
-    </div>
+<!-- ══════════════════════════════════════════════
+  EDITORIAL SPREAD #1 — Quinceañera
+══════════════════════════════════════════════ -->
+<div class="editorial-spread" aria-hidden="true">
+  <img src="/assets/img/gallery/xv/aleyah-xv-45.JPEG" alt="" loading="lazy">
+  <div class="editorial-spread-gradient"></div>
+  <span class="editorial-spread-label">Quinceañera · Dallas, TX</span>
+</div>
 
-    <div class="container section-sm text-center">
-      <a href="/gallery/" class="btn btn-gold">View Full Gallery →</a>
+
+<!-- ══════════════════════════════════════════════
+  HORIZONTAL DRAG GALLERY — Recent Work
+══════════════════════════════════════════════ -->
+<section class="h-gallery-section">
+  <div class="h-gallery-header">
+    <div>
+      <span class="eyebrow">Browse the Portfolio</span>
+      <h2 style="margin:0;">Recent Sessions</h2>
     </div>
+    <div class="h-gallery-hint" aria-hidden="true">
+      <svg width="20" height="12" viewBox="0 0 20 12" fill="none"><path d="M1 6h18M13 1l5 5-5 5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Drag to explore
+    </div>
+  </div>
+
+  <div class="h-gallery-track" role="list" aria-label="Recent photography sessions">
+    <div class="h-gallery-item" role="listitem">
+      <img src="/assets/img/gallery/xv/aleyah-xv-1.JPEG"     alt="Quinceañera" loading="lazy">
+      <span class="h-gallery-item-label">Quinceañera</span>
+    </div>
+    <div class="h-gallery-item">
+      <img src="/assets/img/gallery/prom/prom-44.JPEG"         alt="Prom" loading="lazy">
+      <span class="h-gallery-item-label">Prom Night</span>
+    </div>
+    <div class="h-gallery-item">
+      <img src="/assets/img/gallery/graduation/graduate--55.JPEG" alt="Graduation" loading="lazy">
+      <span class="h-gallery-item-label">Graduation</span>
+    </div>
+    <div class="h-gallery-item">
+      <img src="/assets/img/gallery/sweet16/sweet16-42.JPEG"   alt="Sweet 16" loading="lazy">
+      <span class="h-gallery-item-label">Sweet 16</span>
+    </div>
+    <div class="h-gallery-item">
+      <img src="/assets/img/gallery/portraits/portraits-60.JPEG" alt="Portrait" loading="lazy">
+      <span class="h-gallery-item-label">Portrait</span>
+    </div>
+    <div class="h-gallery-item">
+      <img src="/assets/img/gallery/sessions/andrew-67.JPEG"   alt="Session" loading="lazy">
+      <span class="h-gallery-item-label">Session</span>
+    </div>
+    <div class="h-gallery-item">
+      <img src="/assets/img/gallery/xv/xv-24.JPEG"             alt="XV" loading="lazy">
+      <span class="h-gallery-item-label">Quinceañera</span>
+    </div>
+    <div class="h-gallery-item">
+      <img src="/assets/img/gallery/boxing/boxing-1AD842F6-B47D-4303-8195-367FA3CCB100-2.JPEG" alt="Boxing" loading="lazy">
+      <span class="h-gallery-item-label">Sports</span>
+    </div>
+    <div class="h-gallery-item">
+      <img src="/assets/img/gallery/dance/dance-IMG_3164.JPG"  alt="Dance" loading="lazy">
+      <span class="h-gallery-item-label">Dance</span>
+    </div>
+    <div class="h-gallery-item">
+      <img src="/assets/img/gallery/prom/prom-125.JPEG"         alt="Prom" loading="lazy">
+      <span class="h-gallery-item-label">Prom</span>
+    </div>
+  </div>
+
+  <div class="text-center" style="padding:2rem clamp(1.5rem,4vw,3rem) 0;">
+    <a href="/gallery/" class="btn btn-gold">View Full Gallery →</a>
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════════
+
+<!-- ══════════════════════════════════════════════
+  SPLIT FEATURE — Quinceañera
+══════════════════════════════════════════════ -->
+<div class="feature-split">
+  <div class="feature-photo-col">
+    <img src="/assets/img/gallery/xv/xv-36.JPEG" alt="Quinceañera photography Dallas TX" loading="lazy">
+  </div>
+  <div class="feature-text-col reveal-right">
+    <span class="eyebrow">Quinceañeras & XV</span>
+    <h2>Where Tradition Meets Art</h2>
+    <div class="gold-line"></div>
+    <p>Your quinceañera is one of the most sacred days of your life. Miguel captures every glance, every tear, every twirl with the artistry and reverence this milestone deserves — from the first waltz to the last dance.</p>
+    <a href="/services/quinceanera-photography/" class="btn btn-gold">Explore Quinceañera Photography</a>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════
+  SPLIT FEATURE — Prom  (reversed)
+══════════════════════════════════════════════ -->
+<div class="feature-split reverse">
+  <div class="feature-photo-col">
+    <img src="/assets/img/gallery/prom/prom-212.JPEG" alt="Prom photography Dallas TX" loading="lazy">
+  </div>
+  <div class="feature-text-col reveal-left">
+    <span class="eyebrow">Prom & Sweet 16</span>
+    <h2>Glamour That Lasts Forever</h2>
+    <div class="gold-line"></div>
+    <p>Prom night is the stuff of legends — the outfit, the glow, the unforgettable moment. We transform portraits into editorial art. You'll look like a magazine cover before the limo even arrives.</p>
+    <a href="/services/prom-photography/" class="btn btn-gold-outline">Explore Prom Photography</a>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════════
   STATS
-═══════════════════════════════════════════════ -->
-<section class="section-sm">
+══════════════════════════════════════════════ -->
+<section class="section-sm" style="background:var(--dark-mid);">
   <div class="container">
     <div class="stats-grid reveal">
       <div class="stat-item">
@@ -306,16 +367,27 @@ ogImage: /assets/img/gallery/xv/aleyah-xv-1.JPEG
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════════
+
+<!-- ══════════════════════════════════════════════
+  EDITORIAL SPREAD #2 — Graduation
+══════════════════════════════════════════════ -->
+<div class="editorial-spread editorial-spread-sm" aria-hidden="true">
+  <img src="/assets/img/gallery/graduation/graduate-fab-yards-3B3BE274-09CF-4BC0-AC11-3CC2F98DCF2D.JPEG" alt="" loading="lazy">
+  <div class="editorial-spread-gradient"></div>
+  <span class="editorial-spread-label">Graduation · Texas</span>
+</div>
+
+
+<!-- ══════════════════════════════════════════════
   THE EXPERIENCE — CLIENT JOURNEY
-═══════════════════════════════════════════════ -->
-<section class="section" style="background: var(--dark-mid);">
+══════════════════════════════════════════════ -->
+<section class="section">
   <div class="container">
     <div class="section-header reveal">
       <span class="eyebrow">How It Works</span>
       <h2>The Pichardo's Experience</h2>
       <div class="gold-line center"></div>
-      <p>From first inquiry to final delivery — a seamless, stress-free journey designed around you.</p>
+      <p>From first message to final delivery — a seamless, stress-free process designed entirely around you.</p>
     </div>
 
     <div class="experience-timeline reveal">
@@ -323,13 +395,13 @@ ogImage: /assets/img/gallery/xv/aleyah-xv-1.JPEG
         <div class="exp-num">1</div>
         <span class="exp-icon">💬</span>
         <h4>Reach Out</h4>
-        <p>Fill out our contact form or DM us on Instagram. We respond within 24 hours and learn about your vision, event, and date.</p>
+        <p>Fill out the contact form or DM us on Instagram. We respond within 24 hours and learn about your vision, event, and date.</p>
       </div>
       <div class="exp-step">
         <div class="exp-num">2</div>
         <span class="exp-icon">📋</span>
         <h4>Plan Together</h4>
-        <p>We consult on location, outfits, timeline, and style. Every detail is planned so your shoot day feels effortless.</p>
+        <p>We consult on location, outfits, and timeline. Every detail is planned so your shoot day feels effortless and intentional.</p>
       </div>
       <div class="exp-step">
         <div class="exp-num">3</div>
@@ -347,39 +419,39 @@ ogImage: /assets/img/gallery/xv/aleyah-xv-1.JPEG
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════════
-  ABOUT
-═══════════════════════════════════════════════ -->
-<section class="section">
+
+<!-- ══════════════════════════════════════════════
+  ABOUT — Enhanced
+══════════════════════════════════════════════ -->
+<section class="section" style="background:var(--dark-mid);">
   <div class="container">
     <div class="about-split">
-      <div class="about-img-wrap reveal">
+      <div class="about-img-wrap reveal-left">
         <img
-          src="/assets/img/gallery/sessions/dunne-1.JPEG"
-          alt="Miguel Pichardo — professional photographer in action"
+          src="/assets/img/gallery/portraits/portraits-31.JPEG"
+          alt="Miguel Pichardo — professional photographer Dallas Texas"
           loading="lazy"
-          width="600"
-          height="700"
+          width="600" height="700"
         >
         <div class="about-gold-badge">
           <span class="badge-num">8+</span>
           <span class="badge-label">Years<br>Shooting</span>
         </div>
       </div>
-      <div class="reveal" style="animation-delay:0.2s">
+      <div class="reveal-right">
         <span class="eyebrow">The Photographer</span>
         <h2>Meet Miguel Pichardo</h2>
         <div class="gold-line"></div>
         <p style="margin-bottom:1.25rem;">
           Miguel Pichardo is a Texas-based photographer with a deep passion for visual storytelling. His lens doesn't just take pictures — it captures the emotion, the energy, and the essence of every milestone moment.
         </p>
-        <p style="margin-bottom:1.25rem; color: var(--text-muted);">
+        <p style="margin-bottom:1.25rem;color:var(--text-muted);">
           From the first butterfly of a quinceañera court to the proud tears of a graduation, Miguel brings an artist's eye and a family man's heart to every session. He serves communities across all of Texas, photographing the moments that matter most to Latino families and beyond.
         </p>
-        <p style="margin-bottom:2rem; color: var(--text-muted);">
+        <p style="margin-bottom:2rem;color:var(--text-muted);">
           Bilingual (English/Spanish) · Based in Dallas · Traveling all of Texas
         </p>
-        <div style="display:flex; gap: 1rem; flex-wrap: wrap;">
+        <div style="display:flex;gap:1rem;flex-wrap:wrap;">
           <a href="/about/" class="btn btn-gold">Meet Miguel</a>
           <a href="{{ site.social.instagram }}" target="_blank" rel="noopener" class="btn btn-outline">Instagram ↗</a>
         </div>
@@ -388,10 +460,62 @@ ogImage: /assets/img/gallery/xv/aleyah-xv-1.JPEG
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════════
+
+<!-- ══════════════════════════════════════════════
+  BENTO GALLERY MOSAIC
+══════════════════════════════════════════════ -->
+<section class="section" style="padding-top:0;">
+  <div style="max-width:100%;">
+    <div class="container section-sm text-center">
+      <span class="eyebrow reveal">The Portfolio</span>
+      <h2 class="reveal">A Glimpse Into Our Work</h2>
+      <div class="gold-line center reveal"></div>
+    </div>
+
+    <div class="gallery-bento reveal">
+      <a href="/gallery/xv/" class="bento-item">
+        <img src="/assets/img/gallery/xv/aleyah-xv-22.JPEG" alt="Quinceañera photography Dallas" loading="lazy">
+        <div class="bento-label"><span class="bento-label-text">Quinceañeras</span><span class="bento-label-arrow">VIEW →</span></div>
+      </a>
+      <a href="/gallery/prom/" class="bento-item">
+        <img src="/assets/img/gallery/prom/prom-100.JPEG" alt="Prom photography Dallas" loading="lazy">
+        <div class="bento-label"><span class="bento-label-text">Prom</span><span class="bento-label-arrow">VIEW →</span></div>
+      </a>
+      <a href="/gallery/graduation/" class="bento-item">
+        <img src="/assets/img/gallery/graduation/graduate--16.JPEG" alt="Graduation photography Texas" loading="lazy">
+        <div class="bento-label"><span class="bento-label-text">Graduation</span><span class="bento-label-arrow">VIEW →</span></div>
+      </a>
+      <a href="/gallery/portraits/" class="bento-item">
+        <img src="/assets/img/gallery/portraits/portraits-60.JPEG" alt="Portrait photography Dallas" loading="lazy">
+        <div class="bento-label"><span class="bento-label-text">Portraits</span><span class="bento-label-arrow">VIEW →</span></div>
+      </a>
+      <a href="/gallery/sweet16/" class="bento-item">
+        <img src="/assets/img/gallery/sweet16/sweet16-109.jpg" alt="Sweet 16 photography Dallas" loading="lazy">
+        <div class="bento-label"><span class="bento-label-text">Sweet 16</span><span class="bento-label-arrow">VIEW →</span></div>
+      </a>
+    </div>
+
+    <div class="container section-sm text-center">
+      <a href="/gallery/" class="btn btn-gold">View Full Gallery →</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════
+  EDITORIAL SPREAD #3 — Sports
+══════════════════════════════════════════════ -->
+<div class="editorial-spread editorial-spread-sm" aria-hidden="true">
+  <img src="/assets/img/gallery/boxing/boxing-44D7640E-27C5-46D6-B075-1DB7AC0B02F2-2.JPEG" alt="" loading="lazy">
+  <div class="editorial-spread-gradient"></div>
+  <span class="editorial-spread-label">Sports & Athletics · Dallas, TX</span>
+</div>
+
+
+<!-- ══════════════════════════════════════════════
   PACKAGES / PRICING
-═══════════════════════════════════════════════ -->
-<section class="section" style="background: var(--dark-mid);" id="packages">
+══════════════════════════════════════════════ -->
+<section class="section" style="background:var(--dark-mid);" id="packages">
   <div class="container">
     <div class="section-header reveal">
       <span class="eyebrow">Investment</span>
@@ -400,10 +524,9 @@ ogImage: /assets/img/gallery/xv/aleyah-xv-1.JPEG
       <p>Transparent pricing. No surprises. Every package includes Miguel's signature editing style and a private online gallery.</p>
     </div>
 
-    <div class="packages-grid reveal">
+    <div class="packages-grid">
 
-      <!-- Essential -->
-      <div class="package-card">
+      <div class="package-card reveal">
         <div class="package-tier">Essential</div>
         <div class="package-name">The Classic</div>
         <div class="package-price">$350</div>
@@ -414,13 +537,12 @@ ogImage: /assets/img/gallery/xv/aleyah-xv-1.JPEG
           <li>75+ edited digital images</li>
           <li>Private online gallery</li>
           <li>High-resolution downloads</li>
-          <li>Online sharing & printing rights</li>
+          <li>Personal printing rights</li>
         </ul>
-        <a href="/contact/" class="btn btn-gold-outline" style="text-align:center; justify-content:center;">Book Classic</a>
+        <a href="/contact/" class="btn btn-gold-outline" style="text-align:center;justify-content:center;">Book Classic</a>
       </div>
 
-      <!-- Signature (featured) -->
-      <div class="package-card featured">
+      <div class="package-card featured reveal" style="animation-delay:0.1s">
         <div class="package-badge">Most Popular</div>
         <div class="package-tier">Signature</div>
         <div class="package-name">The Signature</div>
@@ -435,11 +557,10 @@ ogImage: /assets/img/gallery/xv/aleyah-xv-1.JPEG
           <li>Pre-shoot consultation</li>
           <li>Rush delivery available</li>
         </ul>
-        <a href="/contact/" class="btn btn-gold" style="text-align:center; justify-content:center;">Book Signature</a>
+        <a href="/contact/" class="btn btn-gold" style="text-align:center;justify-content:center;">Book Signature</a>
       </div>
 
-      <!-- Elite -->
-      <div class="package-card">
+      <div class="package-card reveal" style="animation-delay:0.2s">
         <div class="package-tier">Elite</div>
         <div class="package-name">The Elite</div>
         <div class="package-price">$1,200</div>
@@ -451,24 +572,25 @@ ogImage: /assets/img/gallery/xv/aleyah-xv-1.JPEG
           <li>Private online gallery</li>
           <li>High-resolution downloads</li>
           <li>Pre-shoot consultation</li>
-          <li>Print release included</li>
-          <li>Priority editing (7 days)</li>
+          <li>Priority 7-day editing</li>
+          <li>Commercial use license</li>
         </ul>
-        <a href="/contact/" class="btn btn-gold-outline" style="text-align:center; justify-content:center;">Book Elite</a>
+        <a href="/contact/" class="btn btn-gold-outline" style="text-align:center;justify-content:center;">Book Elite</a>
       </div>
 
     </div>
 
     <p class="packages-note reveal">
-      All packages are customizable. Quinceañeras, weddings, and multi-day events receive custom quotes.<br>
+      All packages are customizable. Quinceañeras and multi-day events receive custom quotes.<br>
       <a href="/contact/" style="color:var(--gold);">Contact us for a free consultation →</a>
     </p>
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════════
+
+<!-- ══════════════════════════════════════════════
   REVIEWS
-═══════════════════════════════════════════════ -->
+══════════════════════════════════════════════ -->
 <section class="section">
   <div class="container">
     <div class="section-header reveal">
@@ -501,10 +623,11 @@ ogImage: /assets/img/gallery/xv/aleyah-xv-1.JPEG
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════════
+
+<!-- ══════════════════════════════════════════════
   SERVICE AREAS
-═══════════════════════════════════════════════ -->
-<section class="section" style="background: var(--dark-mid);">
+══════════════════════════════════════════════ -->
+<section class="section" style="background:var(--dark-mid);">
   <div class="container">
     <div class="section-header reveal">
       <span class="eyebrow">Where We Go</span>
@@ -529,11 +652,12 @@ ogImage: /assets/img/gallery/xv/aleyah-xv-1.JPEG
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════════
+
+<!-- ══════════════════════════════════════════════
   CTA BANNER
-═══════════════════════════════════════════════ -->
+══════════════════════════════════════════════ -->
 <section class="banner">
-  <img class="banner-bg" src="/assets/img/gallery/xv/xv-15.JPEG" alt="" loading="lazy" aria-hidden="true">
+  <img class="banner-bg" src="/assets/img/gallery/xv/xv-60.JPEG" alt="" loading="lazy" aria-hidden="true">
   <div class="banner-content container">
     <div class="reveal">
       <span class="eyebrow">Ready to Book?</span>
@@ -543,7 +667,7 @@ ogImage: /assets/img/gallery/xv/aleyah-xv-1.JPEG
       </p>
       <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
         <a href="/contact/" class="btn btn-gold">Book Your Session Now</a>
-        <a href="/packages/" class="btn btn-outline">View All Packages</a>
+        <a href="/packages/" class="btn btn-outline">View Packages & Pricing</a>
       </div>
     </div>
   </div>
