@@ -252,36 +252,17 @@
   document.body.style.overflow = 'hidden';
 })();
 
-// Luxury cursor (desktop only)
-(function() {
-  if (window.matchMedia('(pointer: coarse)').matches) return;
-  const dot  = document.getElementById('cursor-dot');
-  const ring = document.getElementById('cursor-ring');
-  if (!dot || !ring) return;
-
-  let mx = -200, my = -200, rx = -200, ry = -200;
-
-  document.addEventListener('mousemove', e => {
-    mx = e.clientX; my = e.clientY;
-    dot.style.left = mx + 'px';
-    dot.style.top  = my + 'px';
+// Gallery filter
+function filterGallery(cat) {
+  const items = document.querySelectorAll('#gallery-grid .gal-item');
+  items.forEach(item => {
+    const show = cat === 'all' || item.dataset.cat === cat;
+    item.style.display = show ? '' : 'none';
   });
-
-  // Ring follows with lerp for smoothness
-  (function lerp() {
-    rx += (mx - rx) * 0.15;
-    ry += (my - ry) * 0.15;
-    ring.style.left = rx + 'px';
-    ring.style.top  = ry + 'px';
-    requestAnimationFrame(lerp);
-  })();
-
-  // Expand ring on interactive elements
-  document.querySelectorAll('a, button, .service-card, .bento-item, .gallery-cat, .package-card').forEach(el => {
-    el.addEventListener('mouseenter', () => ring.classList.add('hover'));
-    el.addEventListener('mouseleave', () => ring.classList.remove('hover'));
+  document.querySelectorAll('.gf-btn').forEach(btn => {
+    btn.classList.toggle('active', btn.getAttribute('onclick') === "filterGallery('" + cat + "')");
   });
-})();
+}
 
 // Parallax hero background
 (function() {
