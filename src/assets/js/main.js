@@ -174,8 +174,11 @@
   const heroImg = document.querySelector('.hero-bg-img');
   if (!heroImg || !heroImg.dataset.images) return;
 
-  let imgs;
-  try { imgs = JSON.parse(heroImg.dataset.images); } catch(e) { return; }
+  let imgs, positions;
+  try {
+    imgs = JSON.parse(heroImg.dataset.images);
+    positions = JSON.parse(heroImg.dataset.positions || '[]');
+  } catch(e) { return; }
   if (imgs.length < 2) return;
 
   const REST = '0.78';
@@ -189,6 +192,7 @@
     setTimeout(() => {
       idx = (idx + 1) % imgs.length;
       heroImg.src = imgs[idx];
+      if (positions[idx]) heroImg.style.objectPosition = positions[idx]; // per-frame crop
       heroImg.style.opacity = REST;
       preload(idx + 1);
     }, 800);
@@ -265,15 +269,5 @@ function filterGallery(cat) {
   window.addEventListener('hashchange', applyHash);
 })();
 
-// Parallax hero background
-(function() {
-  const heroImg = document.querySelector('.hero-bg-img');
-  if (!heroImg) return;
-  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-  window.addEventListener('scroll', () => {
-    const y = window.scrollY;
-    if (y < window.innerHeight) {
-      heroImg.style.transform = 'translateY(' + (y * 0.3) + 'px) scale(1.05)';
-    }
-  }, { passive: true });
-})();
+// (Hero parallax removed — it shifted the image on scroll and cut off
+//  subjects' heads/faces. The hero now stays put for reliable framing.)

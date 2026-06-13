@@ -2194,6 +2194,28 @@ details p {
   display: inline-block;
 }
 
+/* Brand band — large logo moment on a dark, cinematic backdrop */
+.brand-band {
+  background:
+    radial-gradient(ellipse at center, rgba(201,168,76,0.10) 0%, transparent 65%),
+    #0a0806;
+  text-align: center;
+  padding: clamp(3rem, 6vw, 5.5rem) 0;
+}
+.brand-band-logo {
+  width: min(660px, 88%);
+  height: auto;
+  border-radius: var(--radius);
+  box-shadow: 0 20px 64px rgba(0,0,0,0.55);
+}
+.brand-band-tag {
+  margin: 1.5rem 0 0;
+  font-family: var(--font-script);
+  font-size: clamp(1.4rem, 3vw, 2.1rem);
+  color: var(--gold-light);
+  letter-spacing: 0.02em;
+}
+
 /* Contact page: two columns on desktop, stacked (form first) on mobile */
 .contact-layout {
   display: grid;

@@ -74,20 +74,24 @@ module.exports = function(eleventyConfig) {
   // Hero carousel: optimized first frame + a JSON list of optimized frames
   // for the JS to rotate through. `list` is an array of web paths.
   eleventyConfig.addNunjucksAsyncShortcode("heroBg", async function(list, alt) {
-    const urls = [];
-    let first = null;
-    for (const src of list) {
+    const urls = [], positions = [];
+    let first = null, firstPos = "center top";
+    for (const item of list) {
+      const src = (item && item.src) ? item.src : item;
+      const pos = (item && item.pos) ? item.pos : "center top";
       try {
         const m = await optimize(src, [1600]);
         const img = m.webp[m.webp.length - 1];
-        if (!first) first = img;
+        if (!first) { first = img; firstPos = pos; }
         urls.push(img.url);
+        positions.push(pos);
       } catch (e) { /* skip unreadable frame */ }
     }
     if (!first) {
-      return `<img class="hero-bg-img" src="${escAttr(list[0])}" alt="${escAttr(alt)}" loading="eager" fetchpriority="high">`;
+      const f0 = (list[0] && list[0].src) ? list[0].src : list[0];
+      return `<img class="hero-bg-img" src="${escAttr(f0)}" alt="${escAttr(alt)}" loading="eager" fetchpriority="high">`;
     }
-    return `<img class="hero-bg-img" src="${first.url}" alt="${escAttr(alt)}" width="${first.width}" height="${first.height}" loading="eager" fetchpriority="high" decoding="async" data-images='${JSON.stringify(urls)}'>`;
+    return `<img class="hero-bg-img" src="${first.url}" alt="${escAttr(alt)}" width="${first.width}" height="${first.height}" loading="eager" fetchpriority="high" decoding="async" style="object-position:${escAttr(firstPos)}" data-images='${JSON.stringify(urls)}' data-positions='${JSON.stringify(positions)}'>`;
   });
 
   // Filters
