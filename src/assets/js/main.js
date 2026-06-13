@@ -1,11 +1,17 @@
 /* Pichardo's Photography — Main JS */
 
-// Header scroll behavior
+// Header scroll behavior + dark hero detection
 (function() {
   const header = document.getElementById('site-header');
   if (!header) return;
+
+  // If homepage dark hero is present, make nav transparent over it
+  if (document.querySelector('.hero')) {
+    header.classList.add('on-dark-hero');
+  }
+
   const onScroll = () => {
-    header.classList.toggle('scrolled', window.scrollY > 60);
+    header.classList.toggle('scrolled', window.scrollY > 80);
   };
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
