@@ -69,30 +69,15 @@
     }
   }
   </script>
-
-  {% block schema %}{% endblock %}
 </head>
 <body>
-
-  <!-- PAGE LOADER -->
-  <div class="page-loader" id="page-loader" aria-hidden="true">
-    <span class="loader-name">Pichardo's</span>
-    <div class="loader-bar-wrap"><div class="loader-bar-fill"></div></div>
-  </div>
-
-  <!-- LUXURY CURSOR -->
-  <div class="cursor-dot"  id="cursor-dot"  aria-hidden="true"></div>
-  <div class="cursor-ring" id="cursor-ring" aria-hidden="true"></div>
-
-  <!-- FILM GRAIN TEXTURE -->
-  <div class="grain-overlay" aria-hidden="true"></div>
 
   <!-- HEADER -->
   {% include "components/header.njk" %}
 
   <!-- MAIN -->
   <main id="main-content">
-    {% block content %}{% endblock %}
+    {{ content | safe }}
   </main>
 
   <!-- FOOTER -->

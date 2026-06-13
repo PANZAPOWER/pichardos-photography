@@ -24,10 +24,6 @@
   const navClose = document.getElementById('nav-close');
   if (!hamburger || !navLinks) return;
 
-  // Show close button in nav
-  const closeWrap = navLinks.querySelector('.nav-close-wrap');
-  if (closeWrap) closeWrap.style.display = 'block';
-
   const openNav = () => {
     navLinks.classList.add('open');
     hamburger.setAttribute('aria-expanded', 'true');
@@ -66,10 +62,24 @@
   });
 })();
 
-// Reveal on scroll
+// Reveal on scroll — progressive enhancement.
+// Content is visible by default (CSS); we ARM it here, then reveal on intersect.
+// If anything goes wrong, a safety timer guarantees everything becomes visible.
 (function() {
-  const els = document.querySelectorAll('.reveal');
+  const els = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
   if (!els.length) return;
+
+  const showAll = () => els.forEach(el => el.classList.add('visible'));
+
+  // No observer support, or reduced motion → leave everything visible, do nothing.
+  if (!('IntersectionObserver' in window) ||
+      window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    return;
+  }
+
+  // Arm: hide + prime the transition.
+  els.forEach(el => el.classList.add('armed'));
+
   const obs = new IntersectionObserver((entries) => {
     entries.forEach(e => {
       if (e.isIntersecting) {
@@ -77,8 +87,11 @@
         obs.unobserve(e.target);
       }
     });
-  }, { threshold: 0.12 });
+  }, { threshold: 0.08, rootMargin: '0px 0px -4% 0px' });
   els.forEach(el => obs.observe(el));
+
+  // Safety net: never let content stay hidden. Reveal anything still armed.
+  setTimeout(showAll, 2500);
 })();
 
 // Lightbox
@@ -210,21 +223,6 @@
   imgs.forEach(img => obs.observe(img));
 })();
 
-// Reveal left / right variants
-(function() {
-  const els = document.querySelectorAll('.reveal-left, .reveal-right');
-  if (!els.length) return;
-  const obs = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        e.target.classList.add('visible');
-        obs.unobserve(e.target);
-      }
-    });
-  }, { threshold: 0.1 });
-  els.forEach(el => obs.observe(el));
-})();
-
 // Horizontal drag-scroll gallery
 (function() {
   document.querySelectorAll('.h-gallery-track').forEach(track => {
@@ -244,18 +242,6 @@
       track.scrollLeft = scrollLeft - walk;
     });
   });
-})();
-
-// Page intro loader
-(function() {
-  const loader = document.getElementById('page-loader');
-  if (!loader) return;
-  // Hide after 1.2s (bar animation completes)
-  setTimeout(() => {
-    loader.classList.add('hidden');
-    document.body.style.overflow = '';
-  }, 1200);
-  document.body.style.overflow = 'hidden';
 })();
 
 // Gallery filter

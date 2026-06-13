@@ -1274,9 +1274,15 @@ details p {
 .delay-3 { animation-delay: 0.36s; }
 .delay-4 { animation-delay: 0.48s; }
 
-/* Intersection Observer fade */
-.reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.65s ease, transform 0.65s ease; }
-.reveal.visible { opacity: 1; transform: none; }
+/* Scroll reveal — VISIBLE BY DEFAULT. JS adds .armed to hide+animate (progressive
+   enhancement), so content is NEVER hidden if JS fails, is slow, or is blocked. */
+.reveal, .reveal-left, .reveal-right { opacity: 1; transform: none; transition: opacity 0.65s ease, transform 0.65s ease; }
+.reveal.armed { opacity: 0; transform: translateY(20px); }
+.reveal-left.armed  { opacity: 0; transform: translateX(-28px); }
+.reveal-right.armed { opacity: 0; transform: translateX(28px); }
+.reveal.armed.visible,
+.reveal-left.armed.visible,
+.reveal-right.armed.visible { opacity: 1; transform: none; }
 
 /* Always show content when animations are disabled (Windows reduced-motion, accessibility) */
 @media (prefers-reduced-motion: reduce) {
@@ -1304,6 +1310,11 @@ details p {
     font-size: 0.9rem;
     letter-spacing: 0.2em;
     color: rgba(255,255,255,0.9) !important;
+  }
+  .nav-close-wrap {
+    display: block !important;
+    position: absolute;
+    top: 1.75rem; right: 1.75rem;
   }
 }
 
