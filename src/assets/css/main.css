@@ -110,22 +110,17 @@ p  { font-size: 1rem; line-height: 1.75; }
   position: fixed;
   top: 0; left: 0; right: 0;
   z-index: 1000;
-  padding: 1.25rem 0;
-  transition: background var(--transition), padding var(--transition), box-shadow var(--transition);
-}
-/* Nav on dark hero — white text */
-.site-header:not(.scrolled) .nav-links a { color: rgba(255,255,255,0.92); }
-.site-header:not(.scrolled) .nav-cta { color: var(--gold-pale) !important; border-color: rgba(255,255,255,0.5) !important; }
-.site-header:not(.scrolled) .nav-logo-text .script-name { color: #fff; }
-.site-header:not(.scrolled) .nav-logo-text .tagline-small { color: rgba(255,255,255,0.6); }
-.site-header:not(.scrolled) .hamburger span { background: #fff; }
-.site-header.scrolled {
+  padding: 1rem 0;
   background: rgba(255,255,255,0.97);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  padding: 0.75rem 0;
-  box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+  box-shadow: 0 2px 16px rgba(0,0,0,0.07);
   border-bottom: 1px solid rgba(0,0,0,0.06);
+  transition: padding var(--transition), box-shadow var(--transition);
+}
+.site-header.scrolled {
+  padding: 0.65rem 0;
+  box-shadow: 0 3px 24px rgba(0,0,0,0.1);
 }
 .nav-wrap {
   display: flex;
