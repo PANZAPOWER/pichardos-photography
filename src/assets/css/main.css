@@ -19,7 +19,7 @@
   --white:       #ffffff;
   --text-bright: #1a1410;         /* headings */
   --text:        #3d3228;         /* body copy */
-  --text-muted:  #7a6e64;         /* secondary text */
+  --text-muted:  #6b5f52;         /* secondary text — AA-comfortable on cream & white */
   --text-faint:  #b8aaa0;         /* placeholders */
 
   --font-script: 'Great Vibes', cursive;
@@ -79,7 +79,7 @@ p  { font-size: 1rem; line-height: 1.75; }
   font-weight: 700;
   letter-spacing: 0.25em;
   text-transform: uppercase;
-  color: var(--gold);
+  color: var(--gold-dark);
   display: block;
   margin-bottom: 0.75rem;
 }
@@ -249,7 +249,7 @@ p  { font-size: 1rem; line-height: 1.75; }
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center;
+  object-position: center 22%;
   opacity: 0.75;
   transition: opacity 1.5s ease;
 }
@@ -366,8 +366,8 @@ p  { font-size: 1rem; line-height: 1.75; }
 .btn-gold-outline {
   padding: 1rem 2.5rem;
   background: transparent;
-  color: var(--gold);
-  border: 1px solid var(--gold);
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
 }
 .btn-gold-outline:hover {
   background: var(--gold);
@@ -450,6 +450,9 @@ p  { font-size: 1rem; line-height: 1.75; }
 .gallery-masonry img {
   width: 100%;
   display: block;
+  aspect-ratio: 2 / 3;
+  object-fit: cover;
+  object-position: center top;
   transition: transform 0.5s ease, opacity 0.4s ease;
 }
 .gallery-masonry .gal-item:hover img { transform: scale(1.04); }
@@ -638,6 +641,10 @@ p  { font-size: 1rem; line-height: 1.75; }
   padding: clamp(3rem, 6vw, 6rem) clamp(1.25rem, 4vw, 3rem);
 }
 .banner-content h2 { font-size: clamp(2rem, 5vw, 3.5rem); margin-bottom: 1rem; }
+/* Banner sits on a dark photo overlay — force light, legible text */
+.banner h2 { color: var(--cream); }
+.banner .eyebrow { color: var(--gold-light); }
+.banner p { color: rgba(255,255,255,0.82); }
 
 /* ── TRUST STRIP ─────────────────────────────── */
 .trust-strip {
@@ -940,7 +947,7 @@ details p {
   border-radius: var(--radius-sm);
   padding: 0.9rem 1.1rem;
   font-family: var(--font-sans);
-  font-size: 0.92rem;
+  font-size: 1rem; /* >=16px so iOS Safari does not auto-zoom on focus */
   color: var(--text-bright);
   transition: border-color var(--transition), box-shadow var(--transition);
   outline: none;
@@ -1096,7 +1103,7 @@ details p {
   border: 1px solid rgba(255,255,255,0.1);
   border-radius: 8px;
   padding: 0.6rem 0.9rem;
-  font-size: 0.85rem;
+  font-size: 1rem;
   color: var(--text-bright);
   font-family: var(--font-sans);
   outline: none;
@@ -1131,11 +1138,13 @@ details p {
   text-transform: uppercase;
   color: var(--black);
 }
-@media (max-width: 768px) {
+@media (max-width: 968px) {
   .mobile-call-bar { display: block; }
   body { padding-bottom: 56px; }
   .chat-bubble { bottom: 5rem; }
   .chat-window { bottom: 9rem; }
+  /* keep the hero scroll cue above the fixed call bar */
+  .scroll-indicator { bottom: calc(56px + 1.25rem); }
 }
 
 /* ── FOOTER ──────────────────────────────────── */
@@ -1241,7 +1250,7 @@ details p {
   position: relative;
   text-align: center;
   overflow: hidden;
-  background: var(--body-bg);
+  background: var(--dark);
 }
 .page-hero::before {
   content: '';
@@ -1320,8 +1329,8 @@ details p {
 
 /* ── WARM LIGHT SECTIONS ──────────────────────── */
 :root {
-  --warm-bg:    #faf7f2;
-  --warm-bg2:   #f4ede2;
+  --warm-bg:    #f4ecdf;
+  --warm-bg2:   #ece0cd;
   --warm-text:  #1a1410;
   --warm-muted: #6b5f52;
 }
@@ -1405,43 +1414,6 @@ details p {
   white-space: nowrap;
   border: 0;
 }
-
-/* ── PAGE INTRO LOADER ────────────────────────── */
-.page-loader {
-  position: fixed;
-  inset: 0;
-  background: #0a0806;
-  z-index: 99999;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  gap: 1.5rem;
-  transition: opacity 0.7s ease, visibility 0.7s ease;
-}
-.page-loader.hidden { opacity: 0; visibility: hidden; pointer-events: none; }
-.loader-name {
-  font-family: var(--font-script);
-  font-size: 3.5rem;
-  color: var(--gold);
-}
-.loader-bar-wrap {
-  width: 180px;
-  height: 1px;
-  background: rgba(255,255,255,0.08);
-  overflow: hidden;
-  border-radius: 1px;
-}
-.loader-bar-fill {
-  height: 100%;
-  width: 0;
-  background: linear-gradient(90deg, var(--gold-dark), var(--gold-light));
-  animation: loaderFill 1s ease forwards;
-}
-@keyframes loaderFill { to { width: 100%; } }
-
-/* cursor: browser default — custom cursor removed */
-.cursor-dot, .cursor-ring { display: none !important; }
 
 /* ── PHOTO MARQUEE STRIP ──────────────────────── */
 .photo-marquee {
@@ -1709,7 +1681,11 @@ details p {
   letter-spacing: -0.025em !important;
   line-height: 0.92 !important;
 }
-.hero-bg-img { opacity: 0.78 !important; }
+/* Phones: the script wordmark must fit, swashes and all, inside ~358px */
+@media (max-width: 560px) {
+  .hero-title { font-size: clamp(3rem, 15vw, 4.6rem) !important; }
+}
+.hero-bg-img { opacity: 0.78; }
 .hero-bg::after {
   background: linear-gradient(
     160deg,
@@ -1736,7 +1712,7 @@ details p {
   font-size: 0.58rem;
   letter-spacing: 0.32em;
   text-transform: uppercase;
-  color: rgba(255,255,255,0.35);
+  color: rgba(255,255,255,0.62);
 }
 .scroll-indicator-line {
   width: 1px;
@@ -2139,4 +2115,79 @@ details p {
   .about-img-wrap::before { display: none; }
   .about-gold-badge { width: 90px; height: 90px; bottom: -12px; right: -8px; }
   .about-gold-badge .badge-num { font-size: 1.6rem; }
+}
+
+/* ── PORTRAIT CROP FIX ─────────────────────────────────────────────
+   Every cropped (object-fit:cover) image is a portrait. Default crop is
+   center, which slices off the top of the frame — heads, headroom, the
+   part of the composition a photographer cares most about. Anchor the
+   crop to the TOP so faces and framing are always preserved. */
+.card-img,
+.gallery-cat img,
+.banner-bg,
+.service-card img,
+.marquee-photo,
+.bento-item img,
+.editorial-spread img,
+.h-gallery-item img,
+.feature-photo-col img,
+.footer-photo-cell img,
+.about-img-wrap img,
+.gal-item img {
+  object-position: center top;
+}
+
+/* ── ACCESSIBILITY: visible keyboard focus (WCAG 2.4.7) ──────────── */
+:focus-visible {
+  outline: 2px solid var(--gold-dark);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+.btn-gold:focus-visible { outline-color: var(--black); }
+.lightbox-close:focus-visible,
+.lightbox-prev:focus-visible,
+.lightbox-next:focus-visible,
+.site-header.on-dark-hero:not(.scrolled) .nav-links a:focus-visible,
+.hero-ctas .btn:focus-visible,
+.scroll-indicator:focus-visible { outline-color: #fff; }
+
+/* ── ACCESSIBILITY: skip link (WCAG 2.4.1 Bypass Blocks) ─────────── */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 100000;
+  background: var(--gold-dark);
+  color: #fff;
+  padding: 0.75rem 1.25rem;
+  border-radius: 0 0 6px 0;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+.skip-link:focus { left: 0; }
+
+/* Footer contact (phone/email) — reachable on every page incl. desktop */
+.footer-contact {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  margin: 1rem 0 1.25rem;
+}
+.footer-contact a {
+  color: rgba(255,255,255,0.85) !important;
+  font-size: 0.92rem;
+  text-decoration: none;
+  transition: color var(--transition);
+}
+.footer-contact a:hover { color: var(--gold-light) !important; }
+
+/* Contact page: two columns on desktop, stacked (form first) on mobile */
+.contact-layout {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 5rem;
+  align-items: start;
+}
+@media (max-width: 768px) {
+  .contact-layout { grid-template-columns: 1fr; gap: 2.5rem; }
 }

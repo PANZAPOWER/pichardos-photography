@@ -4,3 +4,7 @@ _site/
 *.log
 .env
 .env.local
+
+_chrometmp/
+_shots/
+eleventy-serve.log

@@ -59,7 +59,7 @@ permalink: /gallery/
             alt="Photography by Pichardo's Photography — {{ cat }} session"
             loading="lazy"
             width="400"
-            height="300"
+            height="600"
             data-lightbox="{{ img }}"
           >
           <div class="gal-overlay"><span>⊕</span></div>
@@ -77,21 +77,7 @@ permalink: /gallery/
   <div class="banner-content container">
     <span class="eyebrow">Love What You See?</span>
     <h2>Book Your Session</h2>
-    <p style="color:var(--text-muted);max-width:500px;margin:1rem auto 2rem;">These are your people's milestones waiting to happen. Reserve your date before it's gone.</p>
+    <p style="color:rgba(255,255,255,0.85);max-width:500px;margin:1rem auto 2rem;">These are your people's milestones waiting to happen. Reserve your date before it's gone.</p>
     <a href="/contact/" class="btn btn-gold">Contact Us Today</a>
   </div>
 </section>
-
-<script>
-function filterGallery(cat) {
-  document.querySelectorAll('#gallery-grid .gal-item').forEach(el => {
-    el.style.display = (cat === 'all' || el.dataset.cat === cat) ? 'block' : 'none';
-  });
-  document.querySelectorAll('.quick-reply').forEach(btn => {
-    btn.style.background = 'transparent';
-    btn.style.color = 'var(--gold)';
-  });
-  event.target.style.background = 'var(--gold)';
-  event.target.style.color = 'var(--black)';
-}
-</script>

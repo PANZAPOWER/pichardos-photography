@@ -16,6 +16,7 @@
   <meta property="og:description" content="{{ description or site.description }}">
   <meta property="og:url" content="{{ site.url }}{{ page.url }}">
   <meta property="og:image" content="{{ site.url }}{{ ogImage or '/assets/img/logo/logo-main.png' }}">
+  <meta property="og:image:alt" content="{{ title or site.name }}">
   <meta property="og:site_name" content="{{ site.name }}">
 
   <!-- Twitter -->
@@ -25,10 +26,14 @@
   <meta name="twitter:image" content="{{ site.url }}{{ ogImage or '/assets/img/logo/logo-main.png' }}">
 
   <!-- Robots -->
-  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="robots" content="{{ robots or 'index, follow, max-image-preview:large' }}">
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="/assets/img/logo/logo-main.png">
+
+  <!-- Fonts: warm the connection so the @import chain resolves faster -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
   <!-- CSS -->
   <link rel="stylesheet" href="/assets/css/main.css">
@@ -38,10 +43,10 @@
   {
     "@context": "https://schema.org",
     "@type": "Organization",
-    "name": "{{ site.name }}",
+    "name": "{{ site.name | safe }}",
     "url": "{{ site.url }}",
     "logo": "{{ site.url }}{{ site.logo }}",
-    "description": "{{ site.description }}",
+    "description": "{{ site.description | safe }}",
     "foundingDate": "{{ site.founded }}",
     "sameAs": [
       "{{ site.social.instagram }}",
@@ -50,6 +55,8 @@
     "contactPoint": {
       "@type": "ContactPoint",
       "contactType": "Customer Service",
+      "telephone": "+1-972-415-1366",
+      "email": "{{ site.email | safe }}",
       "areaServed": "TX",
       "availableLanguage": ["English", "Spanish"]
     }
@@ -60,7 +67,7 @@
   {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    "name": "{{ site.name }}",
+    "name": "{{ site.name | safe }}",
     "url": "{{ site.url }}",
     "potentialAction": {
       "@type": "SearchAction",
@@ -71,6 +78,8 @@
   </script>
 </head>
 <body>
+
+  <a href="#main-content" class="skip-link">Skip to content</a>
 
   <!-- HEADER -->
   {% include "components/header.njk" %}

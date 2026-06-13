@@ -28,11 +28,13 @@
     navLinks.classList.add('open');
     hamburger.setAttribute('aria-expanded', 'true');
     document.body.style.overflow = 'hidden';
+    if (navClose) navClose.focus();        // send focus into the menu
   };
   const closeNav = () => {
     navLinks.classList.remove('open');
     hamburger.setAttribute('aria-expanded', 'false');
     document.body.style.overflow = '';
+    hamburger.focus();                     // return focus to the trigger
   };
 
   hamburger.addEventListener('click', openNav);
@@ -48,6 +50,11 @@
     if (navLinks.classList.contains('open') && !navLinks.contains(e.target) && !hamburger.contains(e.target)) {
       closeNav();
     }
+  });
+
+  // Close on Escape
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && navLinks.classList.contains('open')) closeNav();
   });
 })();
 
@@ -101,7 +108,7 @@
   const lbClose = document.getElementById('lightbox-close');
   const lbPrev = document.getElementById('lightbox-prev');
   const lbNext = document.getElementById('lightbox-next');
-  if (!lightbox) return;
+  if (!lightbox || !lbImg || !lbClose || !lbPrev || !lbNext) return;
 
   let images = [];
   let current = 0;
@@ -171,13 +178,19 @@
   try { imgs = JSON.parse(heroImg.dataset.images); } catch(e) { return; }
   if (imgs.length < 2) return;
 
+  const REST = '0.78';
   let idx = 0;
+  const preload = (n) => { const i = new Image(); i.src = imgs[n % imgs.length]; };
+  preload(1); // warm the next slide so the swap never shows a blank frame
+
   setInterval(() => {
+    if (document.hidden) return; // don't fetch/animate in a background tab
     heroImg.style.opacity = '0';
     setTimeout(() => {
       idx = (idx + 1) % imgs.length;
       heroImg.src = imgs[idx];
-      heroImg.style.opacity = '0.45';
+      heroImg.style.opacity = REST;
+      preload(idx + 1);
     }, 800);
   }, 5000);
 })();
@@ -198,7 +211,7 @@
         if (!start) start = timestamp;
         const progress = Math.min((timestamp - start) / duration, 1);
         const eased = 1 - Math.pow(1 - progress, 3);
-        el.textContent = Math.floor(eased * target) + (progress === 1 ? suffix : suffix);
+        el.textContent = Math.floor(eased * target) + suffix;
         if (progress < 1) requestAnimationFrame(step);
       };
       requestAnimationFrame(step);
@@ -206,21 +219,6 @@
     });
   }, { threshold: 0.5 });
   counters.forEach(el => obs.observe(el));
-})();
-
-// Lazy load images
-(function() {
-  if ('loading' in HTMLImageElement.prototype) return;
-  const imgs = document.querySelectorAll('img[loading="lazy"]');
-  const obs = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (e.isIntersecting && e.target.dataset.src) {
-        e.target.src = e.target.dataset.src;
-        obs.unobserve(e.target);
-      }
-    });
-  });
-  imgs.forEach(img => obs.observe(img));
 })();
 
 // Horizontal drag-scroll gallery
@@ -255,6 +253,17 @@ function filterGallery(cat) {
     btn.classList.toggle('active', btn.getAttribute('onclick') === "filterGallery('" + cat + "')");
   });
 }
+
+// Apply a category filter from the URL hash on the gallery page (e.g. /gallery/#prom)
+(function() {
+  if (!document.getElementById('gallery-grid')) return;
+  const applyHash = () => {
+    const cat = (window.location.hash || '').replace('#', '').trim();
+    if (cat) filterGallery(cat);
+  };
+  applyHash();
+  window.addEventListener('hashchange', applyHash);
+})();
 
 // Parallax hero background
 (function() {

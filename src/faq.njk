@@ -10,11 +10,11 @@ permalink: /faq/
 {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  "mainEntity": [{% for cat in faqs %}{% for faq in cat.questions %}{
+  "mainEntity": [{% for cat in faqs %}{% set outerLoop = loop %}{% for faq in cat.questions %}{% if not (outerLoop.first and loop.first) %},{% endif %}{
     "@type": "Question",
-    "name": "{{ faq.q }}",
-    "acceptedAnswer": { "@type": "Answer", "text": "{{ faq.a }}" }
-  }{% if not loop.last or not faqs.last %},{% endif %}{% endfor %}{% if not loop.last %},{% endif %}{% endfor %}]
+    "name": "{{ faq.q | safe }}",
+    "acceptedAnswer": { "@type": "Answer", "text": "{{ faq.a | safe }}" }
+  }{% endfor %}{% endfor %}]
 }
 </script>
 {% endblock %}

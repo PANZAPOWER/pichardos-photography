@@ -31,7 +31,7 @@ permalink: /contact/
 
 <section class="section">
   <div class="container">
-    <div style="display:grid;grid-template-columns:1.2fr 1fr;gap:5rem;align-items:start;">
+    <div class="contact-layout">
 
       <!-- Form -->
       <div class="reveal">
@@ -99,7 +99,21 @@ permalink: /contact/
 
         <div style="display:flex;flex-direction:column;gap:1.5rem;margin-bottom:2.5rem;">
           <div style="display:flex;align-items:flex-start;gap:1rem;">
-            <span style="color:var(--gold);font-size:1.2rem;margin-top:0.1rem;">📍</span>
+            <span style="color:var(--gold-dark);font-size:1.2rem;margin-top:0.1rem;">📞</span>
+            <div>
+              <span style="font-weight:600;display:block;margin-bottom:0.2rem;">Call or Text</span>
+              <a href="tel:{{ site.phone }}" style="color:var(--text);font-size:0.95rem;">{{ site.phoneDisplay }}</a>
+            </div>
+          </div>
+          <div style="display:flex;align-items:flex-start;gap:1rem;">
+            <span style="color:var(--gold-dark);font-size:1.2rem;margin-top:0.1rem;">✉️</span>
+            <div>
+              <span style="font-weight:600;display:block;margin-bottom:0.2rem;">Email</span>
+              <a href="mailto:{{ site.email }}" style="color:var(--text);font-size:0.95rem;">{{ site.email }}</a>
+            </div>
+          </div>
+          <div style="display:flex;align-items:flex-start;gap:1rem;">
+            <span style="color:var(--gold-dark);font-size:1.2rem;margin-top:0.1rem;">📍</span>
             <div>
               <span style="font-weight:600;display:block;margin-bottom:0.2rem;">Based In</span>
               <span style="color:var(--text-muted);font-size:0.9rem;">Dallas, Texas — Serving all of TX</span>

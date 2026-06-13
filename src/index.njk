@@ -11,12 +11,15 @@ ogImage: /assets/img/gallery/xv/aleyah-xv-1.JPEG
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
   "@id": "{{ site.url }}/#business",
-  "name": "{{ site.name }}",
-  "description": "{{ site.description }}",
+  "name": "{{ site.name | safe }}",
+  "description": "{{ site.description | safe }}",
   "url": "{{ site.url }}",
+  "telephone": "+1-972-415-1366",
+  "email": "{{ site.email | safe }}",
+  "priceRange": "$$",
   "logo": "{{ site.url }}{{ site.logo }}",
   "image": ["{{ site.url }}/assets/img/gallery/xv/aleyah-xv-1.JPEG","{{ site.url }}/assets/img/gallery/prom/prom-10.JPEG","{{ site.url }}/assets/img/gallery/graduation/graduate--10.JPEG"],
-  "founder": { "@type": "Person", "name": "{{ site.owner }}" },
+  "founder": { "@type": "Person", "name": "{{ site.owner | safe }}" },
   "address": {
     "@type": "PostalAddress",
     "addressLocality": "{{ site.address.city }}",
@@ -31,8 +34,8 @@ ogImage: /assets/img/gallery/xv/aleyah-xv-1.JPEG
     "name": "Photography Services",
     "itemListElement": [{% for svc in services %}{
       "@type": "Offer",
-      "name": "{{ svc.title }}",
-      "description": "{{ svc.short }}",
+      "name": "{{ svc.title | safe }}",
+      "description": "{{ svc.short | safe }}",
       "url": "{{ site.url }}/services/{{ svc.slug }}/"
     }{% if not loop.last %},{% endif %}{% endfor %}]
   },
@@ -90,11 +93,14 @@ ogImage: /assets/img/gallery/xv/aleyah-xv-1.JPEG
     </div>
 
     <h1 class="hero-title animate-up delay-1">Pichardo's</h1>
-    <p class="hero-subtitle animate-up delay-2" style="font-size:0.78rem;letter-spacing:0.45em;margin-bottom:2rem;">Photography</p>
+    <p class="hero-subtitle animate-up delay-2" style="font-size:0.95rem;letter-spacing:0.42em;margin-bottom:1.5rem;">Photography</p>
 
     <p class="hero-tagline animate-up delay-2">
       Every milestone deserves to be remembered exactly as it felt —
       beautiful, alive, and forever yours.
+    </p>
+    <p class="animate-up delay-2" style="font-size:0.8rem;letter-spacing:0.16em;text-transform:uppercase;color:rgba(255,255,255,0.72);margin-bottom:0.5rem;max-width:620px;">
+      Quinceañera · Sweet 16 · Prom · Graduation &amp; Portraits — Dallas &amp; all of Texas
     </p>
 
     <div class="hero-ctas animate-up delay-3">
@@ -105,15 +111,15 @@ ogImage: /assets/img/gallery/xv/aleyah-xv-1.JPEG
     <div style="margin-top:3.5rem;display:flex;gap:3rem;flex-wrap:wrap;" class="animate-up delay-4">
       <div>
         <span style="font-family:var(--font-script);font-size:2.8rem;color:var(--gold);display:block;line-height:1;">500+</span>
-        <span style="font-size:0.58rem;letter-spacing:0.25em;text-transform:uppercase;color:rgba(255,255,255,0.35);">Sessions</span>
+        <span style="font-size:0.58rem;letter-spacing:0.25em;text-transform:uppercase;color:rgba(255,255,255,0.62);">Sessions</span>
       </div>
       <div>
         <span style="font-family:var(--font-script);font-size:2.8rem;color:var(--gold);display:block;line-height:1;">9</span>
-        <span style="font-size:0.58rem;letter-spacing:0.25em;text-transform:uppercase;color:rgba(255,255,255,0.35);">Texas Cities</span>
+        <span style="font-size:0.58rem;letter-spacing:0.25em;text-transform:uppercase;color:rgba(255,255,255,0.62);">Texas Cities</span>
       </div>
       <div>
         <span style="font-family:var(--font-script);font-size:2.8rem;color:var(--gold);display:block;line-height:1;">100%</span>
-        <span style="font-size:0.58rem;letter-spacing:0.25em;text-transform:uppercase;color:rgba(255,255,255,0.35);">5-Star Reviews</span>
+        <span style="font-size:0.58rem;letter-spacing:0.25em;text-transform:uppercase;color:rgba(255,255,255,0.62);">5-Star Reviews</span>
       </div>
     </div>
   </div>
@@ -473,23 +479,23 @@ ogImage: /assets/img/gallery/xv/aleyah-xv-1.JPEG
     </div>
 
     <div class="gallery-bento reveal">
-      <a href="/gallery/xv/" class="bento-item">
+      <a href="/gallery/#xv" class="bento-item">
         <img src="/assets/img/gallery/xv/aleyah-xv-22.JPEG" alt="Quinceañera photography Dallas" loading="lazy">
         <div class="bento-label"><span class="bento-label-text">Quinceañeras</span><span class="bento-label-arrow">VIEW →</span></div>
       </a>
-      <a href="/gallery/prom/" class="bento-item">
+      <a href="/gallery/#prom" class="bento-item">
         <img src="/assets/img/gallery/prom/prom-100.JPEG" alt="Prom photography Dallas" loading="lazy">
         <div class="bento-label"><span class="bento-label-text">Prom</span><span class="bento-label-arrow">VIEW →</span></div>
       </a>
-      <a href="/gallery/graduation/" class="bento-item">
+      <a href="/gallery/#graduation" class="bento-item">
         <img src="/assets/img/gallery/graduation/graduate--16.JPEG" alt="Graduation photography Texas" loading="lazy">
         <div class="bento-label"><span class="bento-label-text">Graduation</span><span class="bento-label-arrow">VIEW →</span></div>
       </a>
-      <a href="/gallery/portraits/" class="bento-item">
+      <a href="/gallery/#portraits" class="bento-item">
         <img src="/assets/img/gallery/portraits/portraits-60.JPEG" alt="Portrait photography Dallas" loading="lazy">
         <div class="bento-label"><span class="bento-label-text">Portraits</span><span class="bento-label-arrow">VIEW →</span></div>
       </a>
-      <a href="/gallery/sweet16/" class="bento-item">
+      <a href="/gallery/#sweet16" class="bento-item">
         <img src="/assets/img/gallery/sweet16/sweet16-109.jpg" alt="Sweet 16 photography Dallas" loading="lazy">
         <div class="bento-label"><span class="bento-label-text">Sweet 16</span><span class="bento-label-arrow">VIEW →</span></div>
       </a>
@@ -662,7 +668,7 @@ ogImage: /assets/img/gallery/xv/aleyah-xv-1.JPEG
     <div class="reveal">
       <span class="eyebrow">Ready to Book?</span>
       <h2>Your Moment Deserves to Last Forever</h2>
-      <p style="color:var(--text-muted);max-width:560px;margin:1rem auto 2rem;font-size:1.05rem;">
+      <p style="color:rgba(255,255,255,0.85);max-width:560px;margin:1rem auto 2rem;font-size:1.05rem;">
         Dates fill up fast — especially for quinceañeras, proms, and graduation season. Reserve yours today.
       </p>
       <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
