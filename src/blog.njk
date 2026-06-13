@@ -40,7 +40,7 @@ permalink: /blog/
           {% if post.data.image %}
           <a href="{{ post.url }}">
             <div style="overflow:hidden;aspect-ratio:16/9;">
-              <img class="card-img" src="{{ post.data.image }}" alt="{{ post.data.title }}" loading="lazy" width="500" height="281">
+              {% pic post.data.image, post.data.title, { class: "card-img", widths: [600], sizes: "(max-width: 1024px) 50vw, 33vw" } %}
             </div>
           </a>
           {% endif %}
@@ -58,7 +58,7 @@ permalink: /blog/
       <div class="grid-3">
 
         <article class="card reveal">
-          <a href="/contact/"><div style="overflow:hidden;aspect-ratio:16/9;"><img class="card-img" src="/assets/img/gallery/xv/xv-1.jpeg" alt="Quinceañera Planning Guide" loading="lazy" width="500" height="281"></div></a>
+          <a href="/contact/"><div style="overflow:hidden;aspect-ratio:16/9;">{% pic "/assets/img/gallery/xv/aleyah-xv-12.JPG", "Quinceañera Planning Guide", { class: "card-img", widths: [600], sizes: "(max-width: 1024px) 50vw, 33vw" } %}</div></a>
           <div class="card-body">
             <span class="eyebrow" style="font-size:0.6rem;margin-bottom:0.5rem;">Planning Guide</span>
             <h3>How to Plan the Perfect Quinceañera Photo Session</h3>
@@ -68,7 +68,7 @@ permalink: /blog/
         </article>
 
         <article class="card reveal" style="animation-delay:0.1s">
-          <a href="/contact/"><div style="overflow:hidden;aspect-ratio:16/9;"><img class="card-img" src="/assets/img/gallery/prom/prom-1.jpeg" alt="Prom Photography Tips" loading="lazy" width="500" height="281"></div></a>
+          <a href="/contact/"><div style="overflow:hidden;aspect-ratio:16/9;">{% pic "/assets/img/gallery/prom/prom-109.JPEG", "Prom Photography Tips", { class: "card-img", widths: [600], sizes: "(max-width: 1024px) 50vw, 33vw" } %}</div></a>
           <div class="card-body">
             <span class="eyebrow" style="font-size:0.6rem;margin-bottom:0.5rem;">Tips & Tricks</span>
             <h3>5 Tips for Stunning Prom Photos That Look Like Magazine Covers</h3>
@@ -78,7 +78,7 @@ permalink: /blog/
         </article>
 
         <article class="card reveal" style="animation-delay:0.2s">
-          <a href="/contact/"><div style="overflow:hidden;aspect-ratio:16/9;"><img class="card-img" src="/assets/img/gallery/graduation/graduate-fab-yards-1.jpeg" alt="Graduation Photography" loading="lazy" width="500" height="281"></div></a>
+          <a href="/contact/"><div style="overflow:hidden;aspect-ratio:16/9;">{% pic "/assets/img/gallery/graduation/graduate--100.JPG", "Graduation Photography", { class: "card-img", widths: [600], sizes: "(max-width: 1024px) 50vw, 33vw" } %}</div></a>
           <div class="card-body">
             <span class="eyebrow" style="font-size:0.6rem;margin-bottom:0.5rem;">Session Spotlight</span>
             <h3>Graduation Photography: What to Wear, Bring, and Expect</h3>
@@ -88,7 +88,7 @@ permalink: /blog/
         </article>
 
         <article class="card reveal" style="animation-delay:0.1s">
-          <a href="/contact/"><div style="overflow:hidden;aspect-ratio:16/9;"><img class="card-img" src="/assets/img/gallery/dance/dance-1.jpeg" alt="Dance Photography" loading="lazy" width="500" height="281"></div></a>
+          <a href="/contact/"><div style="overflow:hidden;aspect-ratio:16/9;">{% pic "/assets/img/gallery/dance/dance-5B2B713C-E6B8-4E3B-86BE-E93A69A1870B.JPEG", "Dance Photography", { class: "card-img", widths: [600], sizes: "(max-width: 1024px) 50vw, 33vw" } %}</div></a>
           <div class="card-body">
             <span class="eyebrow" style="font-size:0.6rem;margin-bottom:0.5rem;">The Art</span>
             <h3>Capturing Dance: The Art of Freeze-Frame Performance Photography</h3>
@@ -98,7 +98,7 @@ permalink: /blog/
         </article>
 
         <article class="card reveal" style="animation-delay:0.2s">
-          <a href="/contact/"><div style="overflow:hidden;aspect-ratio:16/9;"><img class="card-img" src="/assets/img/gallery/sports/littleleaguebaseball-1.jpeg" alt="Little League Baseball Photography" loading="lazy" width="500" height="281"></div></a>
+          <a href="/contact/"><div style="overflow:hidden;aspect-ratio:16/9;">{% pic "/assets/img/gallery/sports/littleleaguebaseball-46F9A322-63D4-4059-A21D-0C52DCE5CE0A.JPEG", "Little League Baseball Photography", { class: "card-img", widths: [600], sizes: "(max-width: 1024px) 50vw, 33vw" } %}</div></a>
           <div class="card-body">
             <span class="eyebrow" style="font-size:0.6rem;margin-bottom:0.5rem;">Sports</span>
             <h3>Little League Photography: "Success Begins With a Single Swing"</h3>
@@ -108,7 +108,7 @@ permalink: /blog/
         </article>
 
         <article class="card reveal" style="animation-delay:0.3s">
-          <a href="/contact/"><div style="overflow:hidden;aspect-ratio:16/9;"><img class="card-img" src="/assets/img/gallery/beautician/beautician-1.jpeg" alt="Commercial Photography" loading="lazy" width="500" height="281"></div></a>
+          <a href="/contact/"><div style="overflow:hidden;aspect-ratio:16/9;">{% pic "/assets/img/gallery/beautician/beautician-09FF6550-3365-4323-8E1D-2E592081C7BB.JPEG", "Commercial Photography", { class: "card-img", widths: [600], sizes: "(max-width: 1024px) 50vw, 33vw" } %}</div></a>
           <div class="card-body">
             <span class="eyebrow" style="font-size:0.6rem;margin-bottom:0.5rem;">Business</span>
             <h3>Why Professional Photography Is the Best Investment for Your Beauty Business</h3>

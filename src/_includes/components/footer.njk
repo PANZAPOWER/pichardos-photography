@@ -1,23 +1,18 @@
 <!-- Footer photo strip -->
 <div class="footer-photos" aria-hidden="true">
-  <a href="/gallery/#xv" class="footer-photo-cell">
-    <img src="/assets/img/gallery/xv/aleyah-xv-29.JPEG" alt="" loading="lazy">
+  {%- set footerPhotos = [
+    { cat: "xv",         src: "/assets/img/gallery/xv/aleyah-xv-29.JPEG" },
+    { cat: "prom",       src: "/assets/img/gallery/prom/prom-125.JPEG" },
+    { cat: "graduation", src: "/assets/img/gallery/graduation/graduate--32.JPEG" },
+    { cat: "portraits",  src: "/assets/img/gallery/portraits/portraits-5.JPEG" },
+    { cat: "sweet16",    src: "/assets/img/gallery/sweet16/sweet16-76.JPEG" },
+    { cat: "sessions",   src: "/assets/img/gallery/sessions/andrew-43.JPEG" }
+  ] -%}
+  {%- for p in footerPhotos %}
+  <a href="/gallery/#{{ p.cat }}" class="footer-photo-cell">
+    {% pic p.src, "", { widths: [400], sizes: "16vw", ariaHidden: true } %}
   </a>
-  <a href="/gallery/#prom" class="footer-photo-cell">
-    <img src="/assets/img/gallery/prom/prom-125.JPEG" alt="" loading="lazy">
-  </a>
-  <a href="/gallery/#graduation" class="footer-photo-cell">
-    <img src="/assets/img/gallery/graduation/graduate--32.JPEG" alt="" loading="lazy">
-  </a>
-  <a href="/gallery/#portraits" class="footer-photo-cell">
-    <img src="/assets/img/gallery/portraits/portraits-5.JPEG" alt="" loading="lazy">
-  </a>
-  <a href="/gallery/#sweet16" class="footer-photo-cell">
-    <img src="/assets/img/gallery/sweet16/sweet16-76.JPEG" alt="" loading="lazy">
-  </a>
-  <a href="/gallery/#sessions" class="footer-photo-cell">
-    <img src="/assets/img/gallery/sessions/andrew-43.JPEG" alt="" loading="lazy">
-  </a>
+  {%- endfor %}
 </div>
 
 <footer class="site-footer" role="contentinfo">

@@ -42,7 +42,7 @@ eleventyComputed:
 
 <section class="hero" style="min-height:65vh;">
   <div class="hero-bg">
-    <img class="hero-bg-img" src="{{ area.heroImage }}" alt="Photography in {{ area.city }}, TX" loading="eager" width="1600" height="900">
+    {% pic area.heroImage, "Photography in " + area.city + ", TX", { class: "hero-bg-img", widths: [1600], sizes: "100vw", loading: "eager", fetchpriority: "high" } %}
   </div>
   <div class="hero-content">
     <nav class="breadcrumb animate-up" aria-label="Breadcrumb">
@@ -132,7 +132,7 @@ eleventyComputed:
 </section>
 
 <section class="banner">
-  <img class="banner-bg" src="{{ area.heroImage }}" alt="" loading="lazy" aria-hidden="true">
+  {% pic area.heroImage, "", { class: "banner-bg", widths: [1400], sizes: "100vw", ariaHidden: true } %}
   <div class="banner-content container">
     <span class="eyebrow">{{ area.city }}, TX</span>
     <h2>Book Your Session in {{ area.city }}</h2>

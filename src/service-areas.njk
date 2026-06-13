@@ -23,7 +23,7 @@ permalink: /service-areas/
       {% for area in areas %}
       <a href="/service-areas/{{ area.slug }}/" class="area-card" style="display:block;">
         <div style="position:relative;overflow:hidden;border-radius:var(--radius-sm) var(--radius-sm) 0 0;margin:-0 -0 1.5rem -0;aspect-ratio:16/9;">
-          <img src="{{ area.heroImage }}" alt="Photography in {{ area.city }}, TX" loading="lazy" width="500" height="281" style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s ease;">
+          {% pic area.heroImage, "Photography in " + area.city + ", TX", { widths: [600], sizes: "(max-width: 1024px) 50vw, 33vw", style: "width:100%;height:100%;object-fit:cover;object-position:center top;transition:transform 0.5s ease;" } %}
         </div>
         <div class="area-city">{{ area.city }}</div>
         <div class="area-state">Texas</div>

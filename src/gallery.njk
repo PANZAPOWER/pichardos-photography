@@ -54,14 +54,7 @@ permalink: /gallery/
       {% for cat, imgs in galleryImages %}
         {% for img in imgs %}
         <div class="gal-item" data-cat="{{ cat }}">
-          <img
-            src="{{ img }}"
-            alt="Photography by Pichardo's Photography — {{ cat }} session"
-            loading="lazy"
-            width="400"
-            height="600"
-            data-lightbox="{{ img }}"
-          >
+          {% galThumb img, cat %}
           <div class="gal-overlay"><span>⊕</span></div>
         </div>
         {% endfor %}
@@ -73,7 +66,7 @@ permalink: /gallery/
 
 <!-- CTA -->
 <section class="banner">
-  <img class="banner-bg" src="/assets/img/gallery/prom/prom-1.jpeg" alt="" loading="lazy" aria-hidden="true">
+  {% pic "/assets/img/gallery/prom/prom-125.JPEG", "", { class: "banner-bg", widths: [1400], sizes: "100vw", ariaHidden: true } %}
   <div class="banner-content container">
     <span class="eyebrow">Love What You See?</span>
     <h2>Book Your Session</h2>

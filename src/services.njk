@@ -42,7 +42,7 @@ permalink: /services/
         <article class="card">
           <a href="/services/{{ svc.slug }}/">
             <div style="overflow:hidden;">
-              <img class="card-img" src="{{ svc.heroImage }}" alt="{{ svc.title }}" loading="lazy" width="500" height="375">
+              {% pic svc.heroImage, svc.title, { class: "card-img", widths: [600], sizes: "(max-width: 1024px) 50vw, 33vw" } %}
             </div>
           </a>
           <div class="card-body">

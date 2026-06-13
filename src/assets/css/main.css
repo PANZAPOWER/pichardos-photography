@@ -449,10 +449,8 @@ p  { font-size: 1rem; line-height: 1.75; }
 }
 .gallery-masonry img {
   width: 100%;
+  height: auto;
   display: block;
-  aspect-ratio: 2 / 3;
-  object-fit: cover;
-  object-position: center top;
   transition: transform 0.5s ease, opacity 0.4s ease;
 }
 .gallery-masonry .gal-item:hover img { transform: scale(1.04); }

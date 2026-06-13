@@ -54,7 +54,7 @@ eleventyComputed:
 <!-- Page Hero -->
 <section class="hero" style="min-height:70vh;">
   <div class="hero-bg">
-    <img class="hero-bg-img" src="{{ svc.heroImage }}" alt="{{ svc.title }}" loading="eager" width="1600" height="900">
+    {% pic svc.heroImage, svc.title, { class: "hero-bg-img", widths: [1600], sizes: "100vw", loading: "eager", fetchpriority: "high" } %}
   </div>
   <div class="hero-content">
     <nav class="breadcrumb animate-up" aria-label="Breadcrumb">
@@ -138,14 +138,14 @@ eleventyComputed:
       {% if galleryImages[galleryKey] %}
         {% for img in galleryImages[galleryKey] %}
         <div class="gal-item">
-          <img src="{{ img }}" alt="{{ svc.title }} photography by Pichardo's" loading="lazy" width="400" height="300" data-lightbox="{{ img }}">
+          {% pic img, svc.title + " photography by Pichardo's", { widths: [500], sizes: "(max-width: 768px) 50vw, 25vw", lightbox: true } %}
           <div class="gal-overlay"><span>⊕</span></div>
         </div>
         {% endfor %}
       {% else %}
         {% for cat, imgs in galleryImages %}{% for img in imgs | slice(0,3) %}
         <div class="gal-item">
-          <img src="{{ img }}" alt="{{ svc.title }} photography" loading="lazy" width="400" height="300" data-lightbox="{{ img }}">
+          {% pic img, svc.title + " photography", { widths: [500], sizes: "(max-width: 768px) 50vw, 25vw", lightbox: true } %}
           <div class="gal-overlay"><span>⊕</span></div>
         </div>
         {% endfor %}{% endfor %}
@@ -175,7 +175,7 @@ eleventyComputed:
 
 <!-- CTA -->
 <section class="banner">
-  <img class="banner-bg" src="{{ svc.heroImage }}" alt="" loading="lazy" aria-hidden="true">
+  {% pic svc.heroImage, "", { class: "banner-bg", widths: [1400], sizes: "100vw", ariaHidden: true } %}
   <div class="banner-content container">
     <span class="eyebrow">Ready to Book?</span>
     <h2>Reserve Your {{ svc.title }} Session</h2>

@@ -67,23 +67,15 @@ ogImage: /assets/img/gallery/xv/aleyah-xv-1.JPEG
 ══════════════════════════════════════════════ -->
 <section class="hero" aria-label="Hero" style="min-height:100vh;">
   <div class="hero-bg">
-    <img
-      class="hero-bg-img"
-      src="/assets/img/gallery/xv/aleyah-xv-1.JPEG"
-      alt="Elegant quinceañera portrait by Pichardo's Photography Dallas"
-      width="1920" height="1080"
-      loading="eager"
-      fetchpriority="high"
-      data-images='[
-        "/assets/img/gallery/xv/aleyah-xv-1.JPEG",
-        "/assets/img/gallery/prom/prom-10.JPEG",
-        "/assets/img/gallery/graduation/graduate--10.JPEG",
-        "/assets/img/gallery/portraits/portraits-108.JPEG",
-        "/assets/img/gallery/sweet16/sweet16-125.JPEG",
-        "/assets/img/gallery/sessions/dunne-1.JPEG",
-        "/assets/img/gallery/boxing/boxing-1AD842F6-B47D-4303-8195-367FA3CCB100-2.JPEG"
-      ]'
-    >
+    {% heroBg [
+      "/assets/img/gallery/xv/aleyah-xv-1.JPEG",
+      "/assets/img/gallery/prom/prom-10.JPEG",
+      "/assets/img/gallery/graduation/graduate--10.JPEG",
+      "/assets/img/gallery/portraits/portraits-108.JPEG",
+      "/assets/img/gallery/sweet16/sweet16-125.JPEG",
+      "/assets/img/gallery/sessions/dunne-1.JPEG",
+      "/assets/img/gallery/boxing/boxing-1AD842F6-B47D-4303-8195-367FA3CCB100-2.JPEG"
+    ], "Elegant quinceañera portrait by Pichardo's Photography Dallas" %}
   </div>
 
   <div class="hero-content">
@@ -154,31 +146,22 @@ ogImage: /assets/img/gallery/xv/aleyah-xv-1.JPEG
 ══════════════════════════════════════════════ -->
 <div class="photo-marquee" aria-hidden="true">
   <div class="marquee-track">
-    <img class="marquee-photo" src="/assets/img/gallery/xv/aleyah-xv-1.JPEG"       alt="" loading="lazy">
-    <img class="marquee-photo" src="/assets/img/gallery/prom/prom-10.JPEG"           alt="" loading="lazy">
-    <img class="marquee-photo" src="/assets/img/gallery/graduation/graduate--10.JPEG" alt="" loading="lazy">
-    <img class="marquee-photo" src="/assets/img/gallery/sweet16/sweet16-125.JPEG"    alt="" loading="lazy">
-    <img class="marquee-photo" src="/assets/img/gallery/portraits/portraits-108.JPEG" alt="" loading="lazy">
-    <img class="marquee-photo" src="/assets/img/gallery/sports/littleleaguebaseball-1F00DB4D-CC24-47D5-8B5A-8CF030AB9B62.JPEG" alt="" loading="lazy">
-    <img class="marquee-photo" src="/assets/img/gallery/boxing/boxing-05E1BBA5-D353-494A-9E37-A98C94093953-2.JPEG" alt="" loading="lazy">
-    <img class="marquee-photo" src="/assets/img/gallery/sessions/dunne-1.JPEG"       alt="" loading="lazy">
-    <img class="marquee-photo" src="/assets/img/gallery/xv/xv-15.JPEG"               alt="" loading="lazy">
-    <img class="marquee-photo" src="/assets/img/gallery/dance/dance-0C275F9D-EC42-467B-B1CC-ED2D8103BF9D.JPEG" alt="" loading="lazy">
-    <img class="marquee-photo" src="/assets/img/gallery/beautician/beautician-000AFC33-24EF-47E4-884A-2DF9FFC4A4AF.JPG" alt="" loading="lazy">
-    <img class="marquee-photo" src="/assets/img/gallery/prom/prom-215.JPEG"           alt="" loading="lazy">
-    <!-- Duplicate for seamless loop -->
-    <img class="marquee-photo" src="/assets/img/gallery/xv/aleyah-xv-1.JPEG"       alt="" loading="lazy">
-    <img class="marquee-photo" src="/assets/img/gallery/prom/prom-10.JPEG"           alt="" loading="lazy">
-    <img class="marquee-photo" src="/assets/img/gallery/graduation/graduate--10.JPEG" alt="" loading="lazy">
-    <img class="marquee-photo" src="/assets/img/gallery/sweet16/sweet16-125.JPEG"    alt="" loading="lazy">
-    <img class="marquee-photo" src="/assets/img/gallery/portraits/portraits-108.JPEG" alt="" loading="lazy">
-    <img class="marquee-photo" src="/assets/img/gallery/sports/littleleaguebaseball-1F00DB4D-CC24-47D5-8B5A-8CF030AB9B62.JPEG" alt="" loading="lazy">
-    <img class="marquee-photo" src="/assets/img/gallery/boxing/boxing-05E1BBA5-D353-494A-9E37-A98C94093953-2.JPEG" alt="" loading="lazy">
-    <img class="marquee-photo" src="/assets/img/gallery/sessions/dunne-1.JPEG"       alt="" loading="lazy">
-    <img class="marquee-photo" src="/assets/img/gallery/xv/xv-15.JPEG"               alt="" loading="lazy">
-    <img class="marquee-photo" src="/assets/img/gallery/dance/dance-0C275F9D-EC42-467B-B1CC-ED2D8103BF9D.JPEG" alt="" loading="lazy">
-    <img class="marquee-photo" src="/assets/img/gallery/beautician/beautician-000AFC33-24EF-47E4-884A-2DF9FFC4A4AF.JPG" alt="" loading="lazy">
-    <img class="marquee-photo" src="/assets/img/gallery/prom/prom-215.JPEG"           alt="" loading="lazy">
+    {%- set marqueeImgs = [
+      "/assets/img/gallery/xv/aleyah-xv-1.JPEG",
+      "/assets/img/gallery/prom/prom-10.JPEG",
+      "/assets/img/gallery/graduation/graduate--10.JPEG",
+      "/assets/img/gallery/sweet16/sweet16-125.JPEG",
+      "/assets/img/gallery/portraits/portraits-108.JPEG",
+      "/assets/img/gallery/sports/littleleaguebaseball-1F00DB4D-CC24-47D5-8B5A-8CF030AB9B62.JPEG",
+      "/assets/img/gallery/boxing/boxing-05E1BBA5-D353-494A-9E37-A98C94093953-2.JPEG",
+      "/assets/img/gallery/sessions/dunne-1.JPEG",
+      "/assets/img/gallery/xv/xv-15.JPEG",
+      "/assets/img/gallery/dance/dance-0C275F9D-EC42-467B-B1CC-ED2D8103BF9D.JPEG",
+      "/assets/img/gallery/beautician/beautician-000AFC33-24EF-47E4-884A-2DF9FFC4A4AF.JPG",
+      "/assets/img/gallery/prom/prom-215.JPEG"
+    ] -%}
+    {%- for src in marqueeImgs %}{% pic src, "", { class: "marquee-photo", widths: [420], sizes: "220px", ariaHidden: true } %}{% endfor -%}
+    {%- for src in marqueeImgs %}{% pic src, "", { class: "marquee-photo", widths: [420], sizes: "220px", ariaHidden: true } %}{% endfor -%}
   </div>
 </div>
 
@@ -244,7 +227,7 @@ ogImage: /assets/img/gallery/xv/aleyah-xv-1.JPEG
   EDITORIAL SPREAD #1 — Quinceañera
 ══════════════════════════════════════════════ -->
 <div class="editorial-spread" aria-hidden="true">
-  <img src="/assets/img/gallery/xv/aleyah-xv-45.JPEG" alt="" loading="lazy">
+  {% pic "/assets/img/gallery/xv/aleyah-xv-45.JPEG", "", { widths: [1400], sizes: "100vw", ariaHidden: true } %}
   <div class="editorial-spread-gradient"></div>
   <span class="editorial-spread-label">Quinceañera · Dallas, TX</span>
 </div>
@@ -267,43 +250,43 @@ ogImage: /assets/img/gallery/xv/aleyah-xv-1.JPEG
 
   <div class="h-gallery-track" role="list" aria-label="Recent photography sessions">
     <div class="h-gallery-item" role="listitem">
-      <img src="/assets/img/gallery/xv/aleyah-xv-1.JPEG"     alt="Quinceañera" loading="lazy">
+      {% pic "/assets/img/gallery/xv/aleyah-xv-1.JPEG", "Quinceañera", { widths: [500], sizes: "340px" } %}
       <span class="h-gallery-item-label">Quinceañera</span>
     </div>
     <div class="h-gallery-item">
-      <img src="/assets/img/gallery/prom/prom-44.JPEG"         alt="Prom" loading="lazy">
+      {% pic "/assets/img/gallery/prom/prom-44.JPEG", "Prom", { widths: [500], sizes: "340px" } %}
       <span class="h-gallery-item-label">Prom Night</span>
     </div>
     <div class="h-gallery-item">
-      <img src="/assets/img/gallery/graduation/graduate--55.JPEG" alt="Graduation" loading="lazy">
+      {% pic "/assets/img/gallery/graduation/graduate--55.JPEG", "Graduation", { widths: [500], sizes: "340px" } %}
       <span class="h-gallery-item-label">Graduation</span>
     </div>
     <div class="h-gallery-item">
-      <img src="/assets/img/gallery/sweet16/sweet16-42.JPEG"   alt="Sweet 16" loading="lazy">
+      {% pic "/assets/img/gallery/sweet16/sweet16-42.JPEG", "Sweet 16", { widths: [500], sizes: "340px" } %}
       <span class="h-gallery-item-label">Sweet 16</span>
     </div>
     <div class="h-gallery-item">
-      <img src="/assets/img/gallery/portraits/portraits-60.JPEG" alt="Portrait" loading="lazy">
+      {% pic "/assets/img/gallery/portraits/portraits-60.JPEG", "Portrait", { widths: [500], sizes: "340px" } %}
       <span class="h-gallery-item-label">Portrait</span>
     </div>
     <div class="h-gallery-item">
-      <img src="/assets/img/gallery/sessions/andrew-67.JPEG"   alt="Session" loading="lazy">
+      {% pic "/assets/img/gallery/sessions/andrew-67.JPEG", "Session", { widths: [500], sizes: "340px" } %}
       <span class="h-gallery-item-label">Session</span>
     </div>
     <div class="h-gallery-item">
-      <img src="/assets/img/gallery/xv/xv-24.JPEG"             alt="XV" loading="lazy">
+      {% pic "/assets/img/gallery/xv/xv-24.JPEG", "Quinceañera", { widths: [500], sizes: "340px" } %}
       <span class="h-gallery-item-label">Quinceañera</span>
     </div>
     <div class="h-gallery-item">
-      <img src="/assets/img/gallery/boxing/boxing-1AD842F6-B47D-4303-8195-367FA3CCB100-2.JPEG" alt="Boxing" loading="lazy">
+      {% pic "/assets/img/gallery/boxing/boxing-1AD842F6-B47D-4303-8195-367FA3CCB100-2.JPEG", "Boxing", { widths: [500], sizes: "340px" } %}
       <span class="h-gallery-item-label">Sports</span>
     </div>
     <div class="h-gallery-item">
-      <img src="/assets/img/gallery/dance/dance-IMG_3164.JPG"  alt="Dance" loading="lazy">
+      {% pic "/assets/img/gallery/dance/dance-IMG_3164.JPG", "Dance", { widths: [500], sizes: "340px" } %}
       <span class="h-gallery-item-label">Dance</span>
     </div>
     <div class="h-gallery-item">
-      <img src="/assets/img/gallery/prom/prom-125.JPEG"         alt="Prom" loading="lazy">
+      {% pic "/assets/img/gallery/prom/prom-125.JPEG", "Prom", { widths: [500], sizes: "340px" } %}
       <span class="h-gallery-item-label">Prom</span>
     </div>
   </div>
@@ -319,7 +302,7 @@ ogImage: /assets/img/gallery/xv/aleyah-xv-1.JPEG
 ══════════════════════════════════════════════ -->
 <div class="feature-split">
   <div class="feature-photo-col">
-    <img src="/assets/img/gallery/xv/xv-36.JPEG" alt="Quinceañera photography Dallas TX" loading="lazy">
+    {% pic "/assets/img/gallery/xv/xv-36.JPEG", "Quinceañera photography Dallas TX", { widths: [1000], sizes: "(max-width: 900px) 100vw, 50vw" } %}
   </div>
   <div class="feature-text-col reveal-right">
     <span class="eyebrow">Quinceañeras & XV</span>
@@ -335,7 +318,7 @@ ogImage: /assets/img/gallery/xv/aleyah-xv-1.JPEG
 ══════════════════════════════════════════════ -->
 <div class="feature-split reverse">
   <div class="feature-photo-col">
-    <img src="/assets/img/gallery/prom/prom-212.JPEG" alt="Prom photography Dallas TX" loading="lazy">
+    {% pic "/assets/img/gallery/prom/prom-212.JPEG", "Prom photography Dallas TX", { widths: [1000], sizes: "(max-width: 900px) 100vw, 50vw" } %}
   </div>
   <div class="feature-text-col reveal-left">
     <span class="eyebrow">Prom & Sweet 16</span>
@@ -378,7 +361,7 @@ ogImage: /assets/img/gallery/xv/aleyah-xv-1.JPEG
   EDITORIAL SPREAD #2 — Graduation
 ══════════════════════════════════════════════ -->
 <div class="editorial-spread editorial-spread-sm" aria-hidden="true">
-  <img src="/assets/img/gallery/graduation/graduate-fab-yards-3B3BE274-09CF-4BC0-AC11-3CC2F98DCF2D.JPEG" alt="" loading="lazy">
+  {% pic "/assets/img/gallery/graduation/graduate-fab-yards-3B3BE274-09CF-4BC0-AC11-3CC2F98DCF2D.JPEG", "", { widths: [1400], sizes: "100vw", ariaHidden: true } %}
   <div class="editorial-spread-gradient"></div>
   <span class="editorial-spread-label">Graduation · Texas</span>
 </div>
@@ -480,23 +463,23 @@ ogImage: /assets/img/gallery/xv/aleyah-xv-1.JPEG
 
     <div class="gallery-bento reveal">
       <a href="/gallery/#xv" class="bento-item">
-        <img src="/assets/img/gallery/xv/aleyah-xv-22.JPEG" alt="Quinceañera photography Dallas" loading="lazy">
+        {% pic "/assets/img/gallery/xv/aleyah-xv-22.JPEG", "Quinceañera photography Dallas", { widths: [700], sizes: "(max-width: 768px) 50vw, 33vw" } %}
         <div class="bento-label"><span class="bento-label-text">Quinceañeras</span><span class="bento-label-arrow">VIEW →</span></div>
       </a>
       <a href="/gallery/#prom" class="bento-item">
-        <img src="/assets/img/gallery/prom/prom-100.JPEG" alt="Prom photography Dallas" loading="lazy">
+        {% pic "/assets/img/gallery/prom/prom-100.JPEG", "Prom photography Dallas", { widths: [700], sizes: "(max-width: 768px) 50vw, 33vw" } %}
         <div class="bento-label"><span class="bento-label-text">Prom</span><span class="bento-label-arrow">VIEW →</span></div>
       </a>
       <a href="/gallery/#graduation" class="bento-item">
-        <img src="/assets/img/gallery/graduation/graduate--16.JPEG" alt="Graduation photography Texas" loading="lazy">
+        {% pic "/assets/img/gallery/graduation/graduate--16.JPEG", "Graduation photography Texas", { widths: [700], sizes: "(max-width: 768px) 50vw, 33vw" } %}
         <div class="bento-label"><span class="bento-label-text">Graduation</span><span class="bento-label-arrow">VIEW →</span></div>
       </a>
       <a href="/gallery/#portraits" class="bento-item">
-        <img src="/assets/img/gallery/portraits/portraits-60.JPEG" alt="Portrait photography Dallas" loading="lazy">
+        {% pic "/assets/img/gallery/portraits/portraits-60.JPEG", "Portrait photography Dallas", { widths: [700], sizes: "(max-width: 768px) 50vw, 33vw" } %}
         <div class="bento-label"><span class="bento-label-text">Portraits</span><span class="bento-label-arrow">VIEW →</span></div>
       </a>
       <a href="/gallery/#sweet16" class="bento-item">
-        <img src="/assets/img/gallery/sweet16/sweet16-109.jpg" alt="Sweet 16 photography Dallas" loading="lazy">
+        {% pic "/assets/img/gallery/sweet16/sweet16-109.jpg", "Sweet 16 photography Dallas", { widths: [700], sizes: "(max-width: 768px) 50vw, 33vw" } %}
         <div class="bento-label"><span class="bento-label-text">Sweet 16</span><span class="bento-label-arrow">VIEW →</span></div>
       </a>
     </div>
@@ -512,7 +495,7 @@ ogImage: /assets/img/gallery/xv/aleyah-xv-1.JPEG
   EDITORIAL SPREAD #3 — Sports
 ══════════════════════════════════════════════ -->
 <div class="editorial-spread editorial-spread-sm" aria-hidden="true">
-  <img src="/assets/img/gallery/boxing/boxing-44D7640E-27C5-46D6-B075-1DB7AC0B02F2-2.JPEG" alt="" loading="lazy">
+  {% pic "/assets/img/gallery/boxing/boxing-44D7640E-27C5-46D6-B075-1DB7AC0B02F2-2.JPEG", "", { widths: [1400], sizes: "100vw", ariaHidden: true } %}
   <div class="editorial-spread-gradient"></div>
   <span class="editorial-spread-label">Sports & Athletics · Dallas, TX</span>
 </div>
@@ -663,7 +646,7 @@ ogImage: /assets/img/gallery/xv/aleyah-xv-1.JPEG
   CTA BANNER
 ══════════════════════════════════════════════ -->
 <section class="banner">
-  <img class="banner-bg" src="/assets/img/gallery/xv/xv-60.JPEG" alt="" loading="lazy" aria-hidden="true">
+  {% pic "/assets/img/gallery/xv/xv-60.JPEG", "", { class: "banner-bg", widths: [1400], sizes: "100vw", ariaHidden: true } %}
   <div class="banner-content container">
     <div class="reveal">
       <span class="eyebrow">Ready to Book?</span>
