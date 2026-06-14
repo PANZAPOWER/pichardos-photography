@@ -32,6 +32,11 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/admin");
   eleventyConfig.addPassthroughCopy({ "src/robots.txt": "robots.txt" });
   eleventyConfig.addPassthroughCopy({ "src/llms.txt": "llms.txt" });
+  eleventyConfig.addPassthroughCopy({ "src/_headers": "_headers" });
+
+  // Cache-bust version stamped on CSS/JS each build, so browsers always
+  // fetch the latest after a deploy (no more stale stylesheet).
+  eleventyConfig.addGlobalData("assetV", String(Date.now()));
 
   // Plugins
   eleventyConfig.addPlugin(EleventyHtmlBasePlugin);
