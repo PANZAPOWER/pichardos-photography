@@ -2229,6 +2229,62 @@ details p {
   text-shadow: 0 2px 16px rgba(0,0,0,0.6);
 }
 
+/* ── SERVICE / AREA SPLIT HERO ───────────────────────────────────────
+   A full-bleed photo of a standing person can only show a slice (cuts the
+   head or the body) and text over a photo never has reliable contrast.
+   This splits it: title on a clean dark panel (always readable) beside the
+   photo shown at its FULL natural shape — the whole person, never cropped. */
+.svc-hero {
+  background: radial-gradient(ellipse at 78% 38%, rgba(201,168,76,0.09), transparent 60%), #0a0806;
+  padding: clamp(7rem, 10vw, 9.5rem) 0 clamp(3.5rem, 6vw, 5.5rem);
+}
+.svc-hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 0.9fr;
+  gap: clamp(2rem, 5vw, 4.5rem);
+  align-items: center;
+}
+.svc-hero-text .breadcrumb,
+.svc-hero-text .breadcrumb a,
+.svc-hero-text .breadcrumb span { color: rgba(255,255,255,0.6); }
+.svc-hero-text .breadcrumb a:hover { color: var(--gold-light); }
+.svc-hero-icon { font-size: 2.6rem; display: block; margin-bottom: 0.85rem; }
+.svc-hero-h1 {
+  color: var(--cream);
+  font-family: var(--font-serif);
+  font-weight: 500;
+  font-size: clamp(2.2rem, 4.4vw, 3.7rem);
+  line-height: 1.08;
+  margin: 0 0 1.2rem;
+}
+.svc-hero .gold-line { margin: 0 0 1.4rem; }
+.svc-hero-tag {
+  color: rgba(255,255,255,0.82);
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: clamp(1.1rem, 2vw, 1.5rem);
+  line-height: 1.5;
+  margin: 0 0 2rem;
+  max-width: 34ch;
+}
+.svc-hero-photo { text-align: center; }
+.svc-hero-img {
+  width: 100%;
+  max-width: 470px;
+  height: auto;            /* full natural shape — never crops head or body */
+  border-radius: var(--radius);
+  box-shadow: 0 26px 72px rgba(0,0,0,0.55);
+  border: 1px solid rgba(201,168,76,0.28);
+}
+@media (max-width: 820px) {
+  .svc-hero-grid { grid-template-columns: 1fr; gap: 2.2rem; text-align: center; }
+  .svc-hero-photo { order: -1; }
+  .svc-hero-img { max-width: 340px; }
+  .svc-hero-tag { margin-left: auto; margin-right: auto; }
+  .svc-hero .hero-ctas { justify-content: center; }
+  .svc-hero .gold-line { margin-left: auto; margin-right: auto; }
+}
+
 /* Contact page: two columns on desktop, stacked (form first) on mobile */
 .contact-layout {
   display: grid;

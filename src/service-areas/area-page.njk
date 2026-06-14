@@ -40,27 +40,25 @@ eleventyComputed:
 </script>
 {% endblock %}
 
-<section class="hero" style="min-height:65vh;">
-  <div class="hero-bg">
-    {% pic area.heroImage, "Photography in " + area.city + ", TX", { class: "hero-bg-img", widths: [1600], sizes: "100vw", loading: "eager", fetchpriority: "high", style: "object-position: center 35%" } %}
-  </div>
-  <div class="hero-content">
-    <nav class="breadcrumb animate-up" aria-label="Breadcrumb">
-      <a href="/">Home</a> / <a href="/service-areas/">Service Areas</a> / <span>{{ area.city }}</span>
-    </nav>
-    <span class="hero-kicker animate-up delay-1">
-      <span>Serving {{ area.city }}</span>
-      <span>Texas</span>
-    </span>
-    <h1 class="animate-up delay-1" style="font-family:var(--font-serif);">
-      Photographer in {{ area.city }}, TX
-    </h1>
-    <p class="hero-tagline animate-up delay-2">
-      Professional photography for the moments that matter most — right here in {{ area.city }}.
-    </p>
-    <div class="hero-ctas animate-up delay-3">
-      <a href="/contact/" class="btn btn-gold">Book in {{ area.city }}</a>
-      <a href="/gallery/" class="btn btn-outline">View Portfolio</a>
+<section class="svc-hero">
+  <div class="container svc-hero-grid">
+    <div class="svc-hero-text">
+      <nav class="breadcrumb animate-up" aria-label="Breadcrumb">
+        <a href="/">Home</a> / <a href="/service-areas/">Service Areas</a> / <span>{{ area.city }}</span>
+      </nav>
+      <span class="eyebrow animate-up delay-1" style="color:var(--gold-light);">Serving {{ area.city }}, Texas</span>
+      <h1 class="svc-hero-h1 animate-up delay-1">Photographer in {{ area.city }}, TX</h1>
+      <div class="gold-line animate-up delay-2"></div>
+      <p class="svc-hero-tag animate-up delay-2">
+        Professional photography for the moments that matter most — right here in {{ area.city }}.
+      </p>
+      <div class="hero-ctas animate-up delay-3">
+        <a href="/contact/" class="btn btn-gold">Book in {{ area.city }}</a>
+        <a href="/gallery/" class="btn btn-outline">View Portfolio</a>
+      </div>
+    </div>
+    <div class="svc-hero-photo animate-up delay-2">
+      {% pic area.heroImage, "Photography in " + area.city + ", TX", { class: "svc-hero-img", widths: [900], sizes: "(max-width: 820px) 88vw, 480px", loading: "eager", fetchpriority: "high" } %}
     </div>
   </div>
 </section>
