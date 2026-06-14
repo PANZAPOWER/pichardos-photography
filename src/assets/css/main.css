@@ -2216,6 +2216,19 @@ details p {
   letter-spacing: 0.02em;
 }
 
+/* Service & area page hero titles sit over a dark photo — the global heading
+   color is dark charcoal, which vanished. Force light + a shadow for legibility. */
+.hero-content h1:not(.hero-title) {
+  color: var(--cream);
+}
+.hero-content h1:not(.hero-title),
+.hero-content .hero-tagline,
+.hero-content .breadcrumb,
+.hero-content .breadcrumb a,
+.hero-content .breadcrumb span {
+  text-shadow: 0 2px 16px rgba(0,0,0,0.6);
+}
+
 /* Contact page: two columns on desktop, stacked (form first) on mobile */
 .contact-layout {
   display: grid;
